@@ -1,0 +1,14 @@
+{
+  "name": "thinkful-node-capstone",
+  "version": "1.0.0",
+  "description": "Capstone for Node Js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
