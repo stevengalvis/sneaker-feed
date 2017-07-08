@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: jk22IEcS9yv8zKNVtYdrhiwK8bU3u+MDSgUMJ5pRFv9QHFQrMqRi5yW5fqA70S9UEQ4HvwsEA0dAkrsoGTAOpMNHhtFiG7Es9VeolfUieQ9xkFOHyh8x/yfLL7ezJhoMxMoDIcBW8/A9Jz6eiyjMQM2OjuQ9Uj1SgwP8tFzkPh9ot54WHOfw+G7rT2yY+pxFOpHiM7dMfUO0jmd1dC+ocTLngVjPmm7OhuLbgrId19/5dIPpBlZ6iDw7unyD2aogJKD13GjbedGM8gC0X1eo7mtsT/3MgZCfaNXqQLul1maIeVY+Q3btzKQIU7rcNoKBEDJPJtG+81qbWysUPuBf3kRel1o1g6mMNQjw03NxhbQTuCAWKwfh81vbhLJXm9YF88jmOBiCOLLPDW59OqrpNwO4M2bbYQX1plFA9e1pFvbIvRnewUcu2VbyAvmtdGQHjd7uTAwyJ9PrmgUN7hPZ9xx+nZi+RxOP9KbTadCywzPz/7amLEU1xAA3FhLPx9VrSWcbjeap23vYT3r/wtSA7l5OJ80yvvBRlWMWuFwKW0CLoQtKlZtERSjA+g+kIjKPXVD36Auh6wPFdDMOiIvMGWxH0BYy1cvLxGCOWwOISiSG03Qbsir/+Lu7pQ8V+5eoiG8Ygwcy0mhjae+U/EOb7bmR0mO2UG5Iz+6Upkj1irY=
+  app: rocky-castle-50046
+  on:
+    repo: stevengalvis/sneaker-feed
