@@ -1,7 +1,15 @@
+const bodyParser = require('body-parser');
 const express = require('express');
+const mongoose = require('mongoose');
+const morgan = require('mogan');
+
 const app = express();
 
+
+
 app.use(express.static('public'));
+app.use(morgan('common'));
+
 
 let server;
 function runServer() {
