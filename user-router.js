@@ -3,13 +3,13 @@ const express = require('express');
 const jsonParser = require('body-parser').json();
 const passport = require('passport');
 
-const {User} = require('passport');
+const {User} = require('./model');
 
 const router = express.Router();
 
 router.use(jsonParser);
 
-const basicStrategy = new BasicStrategy((username, password, callback => {
+const basicStrategy = new BasicStrategy((username, password, callback) => {
   let user;
   User
     .findOne({username: username})
@@ -30,7 +30,7 @@ const basicStrategy = new BasicStrategy((username, password, callback => {
       }
     })
     .catch(err => callback(err));
-}));
+});
 
 passport.use(basicStrategy);
 router.use(passport.initialize());
@@ -106,3 +106,7 @@ router.get('/', (req, res) => {
     .then(users => res.json(users.map(user => user.apiRepr())))
     .catch(err => console.log(err) && res.status(500).json({message: 'Internal server error'}));
 });
+
+router.get('/me', passport.authenticate('basic', {session: false}),(req, res) => res.json({user: req.user.apiRepr()}));
+
+module.exports = {router};
