@@ -39,6 +39,7 @@ router.post('/', (req, res) => {
   if(!req.body) {
     return res.status(400).json({message: 'No request body'});
   }
+  console.log(req.body)
 
   if(!('username' in req.body)) {
     return res.status(422).json({message: 'Missing field: username'});
@@ -96,6 +97,7 @@ router.post('/', (req, res) => {
     .catch(err => {
       res.status(500).json({message: 'Internal server error'});
     });
+    console.log(req.body);
 });
 
 

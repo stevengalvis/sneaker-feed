@@ -19,7 +19,7 @@ app.use(morgan('common'));
 app.use('/users/', userRouter);
 
 app.use('*', function(req, res) {
-  return res.stauts(404).json({message: 'Not found'});
+  return res.status(404).json({message: 'Not found'});
 });
 
 

@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Node Capstone</title>
-  </head>
-  <body>
-  <h1>Hello World</h1>
-  </body>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+
+
+<form action="http://localhost:8080/users" method = "post">
+
+    <fieldset name="sign-up">
+        <legend>Sign up</legend>
+        <label for="user-name">Username</label><input id="user-name" name="username" type="text"/>
+        <label for="first-name">First name</label><input id="first-name" name="firstName" type="text"/>
+        <label for="last-name">Last name</label><input id="last-name" name="lastName" type="text"/>
+        <label for="password">Password</label><input id="password" name="password" type="password"/>
+    </fieldset>
+    <button type = "submit">Submit</button>
+</form>
+</body>
 </html>
