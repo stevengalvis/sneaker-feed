@@ -5,27 +5,20 @@
 
 $(function() {
     $(".sign-up").on('submit', function(e) {
+      e.preventDefault();
         console.log('clicked');
-        //   $.post("http://localhost:8080/users", {
-        //     username: $("input[name=username]").val(),
-        //     firstName: $("input[name=firstName]").val(),
-        //     lastName: $("input[name=lastName]").val(),
-        //     password: $("input[name=password]").val()
-        //   },
-        //   function(data, status){
-        //       console.log(data);
-        //   });
-        // });
+        let data = {
+            username: $("input[name=username]").val(),
+            firstName: $("input[name=firstName]").val(),
+            lastName: $("input[name=lastName]").val(),
+            password: $("input[name=password]").val()
+        }
 
         $.ajax({
-            type: "POST",
             url: "http://localhost:8080/users",
-            data: {
-                username: $("input[name=username]").val(),
-                firstName: $("input[name=firstName]").val(),
-                lastName: $("input[name=lastName]").val(),
-                password: $("input[name=password]").val()
-            },
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json",
             success: function(data, status) {
                 console.log(data, status);
             }
