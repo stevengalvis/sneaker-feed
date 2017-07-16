@@ -6,6 +6,16 @@ $.ajax({
   type: "GET",
   success: function(data, status) {
       console.log(data);
+      let resultElement = '';
+      if (data) {
+        data.products.forEach(function(item) {
+          resultElement += '<div>'+ '<img src = "' + item.image.sizes.Best.url + '"</img>'
+        });
+      }
+      else {
+        resultElement += '<p>No results</p>';
+      }
+      $('.js-sneaker-results').html(resultElement);
   }
 });
 
