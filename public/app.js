@@ -1,6 +1,20 @@
 'use strict';
 
+//get data from shopstyle api
+$.ajax({
+  url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=nike+men + shoe&offset=0&limit=10",
+  type: "GET",
+  success: function(data, status) {
+      console.log(data);
+  }
+});
+
+
+
+
+
 //dom manipulation
+
 
 $(function() {
     $(".sign-up").on('submit', function(e) {
