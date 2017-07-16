@@ -1,6 +1,5 @@
 'use strict';
 
-
 //dom manipulation
 
 $(function() {
