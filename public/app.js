@@ -9,7 +9,11 @@ $.ajax({
       let resultElement = '';
       if (data) {
         data.products.forEach(function(item) {
-          resultElement += '<div>'+ '<img src = "' + item.image.sizes.Best.url + '"</img>'
+          resultElement += '<div>'+ '<img src = "' + item.image.sizes.Best.url + '"</img>' +
+          '<p>' + item.priceLabel + '</p>' +
+          '<p>' + item.brandedName + '</p>';
+
+
         });
       }
       else {
