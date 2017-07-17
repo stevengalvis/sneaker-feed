@@ -112,6 +112,15 @@ router.get('/', (req, res) => {
 router.get('/me', passport.authenticate('basic', {session: false}),(req, res) => res.json({user: req.user.apiRepr()}));
 
 router.put('/favorites', passport.authenticate('basic', {session: false}), (req, res) => {
+  const requiredFields = ['username', 'id'];
+  for(let i=0; i<requiredFields.length; i++) {
+    const field = requiredFields[i];
+    if(!(field in req.body)) {
+      const message = `Missing \`${field}\` in request body`;
+      console.error(message);
+      return res.status(400).send(message);
+    }
+  }
   let {username,id} = req.body;
   let user;
   User
