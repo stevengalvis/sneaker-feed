@@ -111,4 +111,18 @@ router.get('/', (req, res) => {
 
 router.get('/me', passport.authenticate('basic', {session: false}),(req, res) => res.json({user: req.user.apiRepr()}));
 
+router.put('/favorites', passport.authenticate('basic', {session: false}), (req, res) => {
+  let {username,id} = req.body;
+  let user;
+  User
+    .findOneAndUpdate({username: username}, {$push: {favorites: id}}, {new: true})
+    .exec()
+    .then(_user => {
+      user = _user;
+      console.log(req.body);
+      res.status(201).json(user.apiRepr());
+    })
+    .catch(err => res.status(500).json({message: 'Something went wrong'}));
+});
+
 module.exports = {router};
