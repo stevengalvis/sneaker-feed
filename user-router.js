@@ -122,6 +122,7 @@ router.put('/favorites', passport.authenticate('basic', {session: false}), (req,
     }
   }
   let {username,id} = req.body;
+  //console.log
   let user;
   User
     .findOneAndUpdate({username: username}, {$push: {favorites: id}}, {new: true})

@@ -9,11 +9,10 @@ $.ajax({
       let resultElement = '';
       if (data) {
         data.products.forEach(function(item) {
-          resultElement += '<div>'+ '<img src = "' + item.image.sizes.Best.url + '"</img>' +
+          resultElement += '<div class = "sneaker-card">'+ '<img src = "' + item.image.sizes.Best.url + '"</img>' +
           '<p>' + item.priceLabel + '</p>' +
-          '<p>' + item.brandedName + '</p>';
-
-
+          '<p>' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
+          '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div>';
         });
       }
       else {
@@ -23,7 +22,7 @@ $.ajax({
   }
 });
 
-
+// TODO: make image a link and include href to page to buy shoe
 
 
 
@@ -52,4 +51,14 @@ $(function() {
         });
 
     });
+
+    // event listener for favorites
+    //get data from resultElement
+    $('.sneaker-card').on('click','.favorite-button', function(e) {
+      let img = $(this).siblings('img').attr('src');
+
+    });
+
+    //function for sending favorite object to db
+
 });
