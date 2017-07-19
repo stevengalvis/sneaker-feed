@@ -10,8 +10,8 @@ $.ajax({
       if (data) {
         data.products.forEach(function(item) {
           resultElement += '<div class = "sneaker-card">'+ '<img src = "' + item.image.sizes.Best.url + '"</img>' +
-          '<p>' + item.priceLabel + '</p>' +
-          '<p>' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
+          '<p class ="price-label">' + item.priceLabel + '</p>' +
+          '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div>';
         });
       }
@@ -55,8 +55,11 @@ $(function() {
     // event listener for favorites
     //get data from resultElement
     $('.sneaker-card').on('click','.favorite-button', function(e) {
-      let img = $(this).siblings('img').attr('src');
-
+      let shoeData = {
+        brandedName: $(this).siblings('.branded-name').text(),
+        priceLabel: $(this).siblings('.price-label').text(),
+        img: $(this).siblings('img').attr('src')
+      }
     });
 
     //function for sending favorite object to db
