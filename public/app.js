@@ -9,7 +9,7 @@ $.ajax({
       let resultElement = '';
       if (data) {
         data.products.forEach(function(item) {
-          resultElement += '<div class = "sneaker-card">'+ '<img src = "' + item.image.sizes.Best.url + '"</img>' +
+          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a>' +
           '<p class ="price-label">' + item.priceLabel + '</p>' +
           '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div>';
@@ -22,7 +22,6 @@ $.ajax({
   }
 });
 
-// TODO: make image a link and include href to page to buy shoe
 
 
 
@@ -58,7 +57,8 @@ $(function() {
       let shoeData = {
         brandedName: $(this).siblings('.branded-name').text(),
         priceLabel: $(this).siblings('.price-label').text(),
-        img: $(this).siblings('img').attr('src')
+        shoeUrl: $(this).siblings('a').attr('href'),
+        img: $(this).siblings('a').children('img').attr('src')
       }
     });
 
