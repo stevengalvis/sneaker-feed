@@ -100,7 +100,14 @@ router.post('/', (req, res) => {
 
 });
 
-
+const isAuthenticated = (req, res, next) => {
+  if(req.user) {
+    next();
+  }
+  else {
+    res.status(500).json({message:'not logged in'})
+  }
+}
 router.get('/', (req, res) => {
   return User
     .find()
@@ -109,23 +116,14 @@ router.get('/', (req, res) => {
     .catch(err => console.log(err) && res.status(500).json({message: 'Internal server error'}));
 });
 
-router.get('/me', passport.authenticate('basic', {session: false}),(req, res) => res.json({user: req.user.apiRepr()}));
+router.get('/login', passport.authenticate('basic', {session: true}),(req, res) => res.json({user: req.user.apiRepr()}));
 
-router.put('/favorites', passport.authenticate('basic', {session: false}), (req, res) => {
-  const requiredFields = ['username', 'id'];
-  for(let i=0; i<requiredFields.length; i++) {
-    const field = requiredFields[i];
-    if(!(field in req.body)) {
-      const message = `Missing \`${field}\` in request body`;
-      console.error(message);
-      return res.status(400).send(message);
-    }
-  }
-  let {username,id} = req.body;
-  //console.log
+router.put('/favorites', isAuthenticated, (req, res) => {
+  console.log(req.user.username);
+  console.log(req.body)
   let user;
   User
-    .findOneAndUpdate({username: username}, {$push: {favorites: id}}, {new: true})
+    .findOneAndUpdate({username: req.user.username}, {$push: {favorites: req.body}}, {new: true})
     .exec()
     .then(_user => {
       user = _user;

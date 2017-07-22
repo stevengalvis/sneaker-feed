@@ -60,8 +60,21 @@ $(function() {
         shoeUrl: $(this).siblings('a').attr('href'),
         img: $(this).siblings('a').children('img').attr('src')
       }
+      console.log(shoeData);
+      addToFavorites(shoeData);
     });
 
     //function for sending favorite object to db
+    function addToFavorites(shoeData) {
+      $.ajax({
+          url: "http://localhost:8080/users/favorites",
+          type: "PUT",
+          data: JSON.stringify(shoeData),
+          contentType: "application/json",
+          success: function(data, status) {
+              console.log(data, status);
+          }
+      });
+    }
 
 });
