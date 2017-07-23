@@ -32,8 +32,25 @@ const basicStrategy = new BasicStrategy((username, password, callback) => {
     .catch(err => callback(err));
 });
 
+router.use(require('express-session')({
+  secret: 'something something',
+  resave: false,
+  saveUninitialized: false
+}));
+
 passport.use(basicStrategy);
 router.use(passport.initialize());
+router.use(passport.session());
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
 
 router.post('/', (req, res) => {
   if(!req.body) {
@@ -99,6 +116,8 @@ router.post('/', (req, res) => {
     });
 
 });
+
+
 
 const isAuthenticated = (req, res, next) => {
   if(req.user) {

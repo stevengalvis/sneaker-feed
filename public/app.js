@@ -2,7 +2,7 @@
 
 //get data from shopstyle api
 $.ajax({
-  url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=nike+men + shoe&offset=0&limit=10",
+  url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=adidas+men + shoe&offset=0&limit=10",
   type: "GET",
   success: function(data, status) {
       console.log(data);
@@ -49,6 +49,25 @@ $(function() {
             }
         });
 
+    });
+
+    //event listener for logging in
+
+    $('.login').on('submit', function(e) {
+      e.preventDefault();
+      let data = {
+        username: $("input[name=username]").val(),
+        password: $("input[name=password]").val()
+      }
+      $.ajax({
+        type: "GET",
+        url: 'http://localhost:8080/users/login',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        success: function(data, status) {
+          console.log(data, status);
+        }
+      });
     });
 
     // event listener for favorites
