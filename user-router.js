@@ -152,4 +152,16 @@ router.put('/favorites', isAuthenticated, (req, res) => {
     .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
 
+router.get('/favorites', isAuthenticated, (req, res) => {
+  let user;
+  User
+    .findOne({username: req.user.username})
+    .exec()
+    .then(_user => {
+      user = _user;
+      res.status(201).json(user.apiFavorites());
+    })
+    .catch(err => res.status(500).json({message: 'could not get favorites list'}))
+});
+
 module.exports = {router};

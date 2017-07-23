@@ -27,6 +27,12 @@ UserSchema.methods.apiRepr = function() {
   };
 }
 
+UserSchema.methods.apiFavorites = function() {
+  return {
+    favorites: this.favorites || []
+  };
+}
+
 UserSchema.methods.validatePassword = function(password) {
   return bcrypt.compare(password, this.password);
 }
