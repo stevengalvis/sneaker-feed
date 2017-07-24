@@ -9,7 +9,7 @@ $.ajax({
       let resultElement = '';
       if (data) {
         data.favorites.forEach(function(item) {
-          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a>' +
+          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.shoeUrl + '">' + '<img src = "' + item.img + '"</img></a>' +
           '<p class ="price-label">' + item.priceLabel + '</p>' +
           '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div>';
@@ -18,6 +18,6 @@ $.ajax({
       else {
         resultElement += '<p>No results</p>';
       }
-      $('.js-sneaker-results').html(resultElement);
+      $('.js-favorites-list').html(resultElement);
   }
 });
