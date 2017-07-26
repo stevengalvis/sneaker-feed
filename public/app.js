@@ -26,6 +26,7 @@ $.ajax({
   }
 });
 
+
 //render alternateImages
 function renderAlternateImages(alternateImages) {
   let productImages = '';
@@ -40,6 +41,7 @@ function renderAlternateImages(alternateImages) {
 
 // TODO: render products function
 
+//TODO add search box
 
 //dom manipulation
 
