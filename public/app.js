@@ -9,7 +9,11 @@ $.ajax({
       let resultElement = '';
       if (data) {
         data.products.forEach(function(item) {
-          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a>' +
+          let alternateImages = '';
+          if(item.alternateImages.size !== 0) {
+            alternateImages = renderAlternateImages(item.alternateImages);
+          }
+          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a>' + alternateImages +
           '<p class ="price-label">' + item.priceLabel + '</p>' +
           '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div>';
@@ -22,7 +26,19 @@ $.ajax({
   }
 });
 
+//render alternateImages
+function renderAlternateImages(alternateImages) {
+  let productImages = '';
+  for (let i = 0; i < alternateImages.length; i++) {
+    if(i <= 4) {
+      productImages += '<img src = "' + alternateImages[i].sizes.Medium.url + '"</img>';
+    }
+  }
 
+  return productImages;
+}
+
+// TODO: render products function
 
 
 //dom manipulation

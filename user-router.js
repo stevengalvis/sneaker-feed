@@ -34,7 +34,7 @@ const basicStrategy = new BasicStrategy((username, password, callback) => {
 
 router.use(require('express-session')({
   secret: 'something something',
-  resave: false,
+  resave: true,
   saveUninitialized: false
 }));
 
@@ -51,6 +51,8 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
+// TODO: how to remove pop up to log in default check passport docs?
 
 router.post('/', (req, res) => {
   if(!req.body) {
@@ -137,6 +139,9 @@ router.get('/', (req, res) => {
 
 router.get('/login', passport.authenticate('basic', {session: true}),(req, res) => res.json({user: req.user.apiRepr()}));
 
+
+// TODO: get for user to sign out (req.session.destroy)
+
 router.put('/favorites', isAuthenticated, (req, res) => {
   console.log(req.user.username);
   console.log(req.body)
@@ -163,5 +168,8 @@ router.get('/favorites', isAuthenticated, (req, res) => {
     })
     .catch(err => res.status(500).json({message: 'could not get favorites list'}))
 });
+
+// TODO: delete endpoint for favorites to remove item from listene
+
 
 module.exports = {router};

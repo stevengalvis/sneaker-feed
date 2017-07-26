@@ -21,3 +21,7 @@ $.ajax({
       $('.js-favorites-list').html(resultElement);
   }
 });
+
+// TODO: add event listener for deleting favorites
+          // should make a /delete request and return updated favorites data
+          // then make ajax request again but call renderList function with updated data
