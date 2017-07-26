@@ -24,14 +24,25 @@ $.ajax({
   }
 });
 
-// TODO: add event listener for deleting favorites
-          // should make a /delete request and return updated favorites data
-          // then make ajax request again but call renderList function with updated data
+// TODO: renderList function that will render updated list items from db 
+
+
+
+function removeFavorite(shoeData) {
+  $.ajax({
+    url: "http://localhost:8080/users/favorites",
+    type: "POST",
+    data: JSON.stringify(shoeData),
+    contentType: 'application/json',
+    success: function(data, status) {
+      console.log(data, status);
+    }
+  });
+}
 
 $(function() {
 
   $('.sneaker-card').on('click', '.remove-item', function(e) {
-    console.log('test');
     let shoeData = {
       brandedName: $(this).siblings('.branded-name').text(),
       priceLabel: $(this).siblings('.price-label').text(),
@@ -39,16 +50,6 @@ $(function() {
       img: $(this).siblings('a').children('img').attr('src')
     };
     console.log(shoeData);
+    removeFavorite(shoeData);
   });
-})
-//
-// $('.sneaker-card').on('click', '.remove-item', function(e) {
-//   console.log('test');
-//   let shoeData = {
-//     brandedName: $(this).siblings('.branded-name').text(),
-//     priceLabel: $(this).siblings('.price-label').text(),
-//     shoeUrl: $(this).siblings('a').attr('href'),
-//     img: $(this).siblings('a').children('img').attr('src')
-//   };
-//   console.log(shoeData);
-// });
+});
