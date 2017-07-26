@@ -13,7 +13,7 @@ $.ajax({
           if(item.alternateImages.size !== 0) {
             alternateImages = renderAlternateImages(item.alternateImages);
           }
-          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a>' + alternateImages +
+          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a>' +  '<div class = "js-alternate-images">' + alternateImages + '</div>'
           '<p class ="price-label">' + item.priceLabel + '</p>' +
           '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div>';
