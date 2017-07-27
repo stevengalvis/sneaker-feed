@@ -14,23 +14,18 @@ $.ajax({
   }
 });
 
-// TODO: renderList function that will render updated list items from db
 function renderList(shoeData) {
   let resultElement = '';
   shoeData.favorites.forEach(function(item) {
       resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.shoeUrl + '">' + '<img src = "' + item.img + '"</img></a>' +
       '<p class ="price-label">' + item.priceLabel + '</p>' +
-      '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
-      '<i class="fa fa-heart-o" aria-hidden="true"></i></button>' +
+      '<p class ="branded-name">' + item.brandedName + '</p>' +
       '<button type = "button" class ="remove-item" title ="Remove item">' +
       '<i class="fa fa-trash-o" aria-hidden="true"></i></button></div>';
     });
 
   $('.js-favorites-list').html(resultElement);
 }
-
-
-
 
 function removeFavorite(shoeData) {
   $.ajax({
@@ -39,14 +34,15 @@ function removeFavorite(shoeData) {
     data: JSON.stringify(shoeData),
     contentType: 'application/json',
     success: function(data, status) {
-      console.log(data, status);
+      renderList(data);
+      console.log(data);
     }
   });
 }
 
 $(function() {
 
-  $('.sneaker-card').on('click', '.remove-item', function(e) {
+  $('.js-favorites-list').on('click', '.remove-item', function(e) {
     let shoeData = {
       brandedName: $(this).siblings('.branded-name').text(),
       priceLabel: $(this).siblings('.price-label').text(),

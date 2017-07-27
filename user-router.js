@@ -35,7 +35,7 @@ const basicStrategy = new BasicStrategy((username, password, callback) => {
 router.use(require('express-session')({
   secret: 'something something',
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
 
 passport.use(basicStrategy);
