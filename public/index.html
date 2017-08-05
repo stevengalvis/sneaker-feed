@@ -2,46 +2,68 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Node Capstone</title>
+  <meta charset="utf-8">
+  <title>Node Capstone</title>
+  <!-- Responsive viewport tag, tells small screens that it's responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Normalize.css, a cross-browser reset file -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="float-grid.css">
 </head>
 
 <body>
-    <h1>Hello World</h1>
+  <main role="main">
 
 
-<form action="http://localhost:8080/users" class = "sign-up" method = "post">
 
-    <fieldset name="sign-up">
+
+    <form action="http://localhost:8080/users" class="sign-up" method="post">
+
+      <fieldset name="sign-up">
         <legend>Sign up</legend>
-        <label for="user-name">Username</label><input id="user-name" name="username" type="text"/>
-        <label for="first-name">First name</label><input id="first-name" name="firstName" type="text"/>
-        <label for="last-name">Last name</label><input id="last-name" name="lastName" type="text"/>
-        <label for="password">Password</label><input id="password" name="password" type="password"/>
-    </fieldset>
-    <button type = "submit">Submit</button>
-</form>
+        <label for="user-name">Username</label><input id="user-name" name="username" type="text" />
+        <label for="first-name">First name</label><input id="first-name" name="firstName" type="text" />
+        <label for="last-name">Last name</label><input id="last-name" name="lastName" type="text" />
+        <label for="password">Password</label><input id="password" name="password" type="password" />
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
 
 
 
-<form action="http://localhost:8080/login" class = "login" method = "post">
+    <form action="http://localhost:8080/login" class="login" method="post">
 
-    <fieldset name="login">
+      <fieldset name="login">
         <legend>Log in</legend>
-        <label for="user-name">Username</label><input id="login-username" name="username" type="text"/>
-        <label for="password">Password</label><input id="login-password" name="password" type="password"/>
-    </fieldset>
-    <button type = "submit">Log in</button>
-</form>
+        <label for="user-name">Username</label><input id="login-username" name="username" type="text" />
+        <label for="password">Password</label><input id="login-password" name="password" type="password" />
+      </fieldset>
+      <button type="submit">Log in</button>
+    </form>
 
-<a href="/favorites.html">See Favorites</a>
+    <a href="/favorites.html">See Favorites</a>
 
-<div class = "js-sneaker-results"></div>
-<!-- link to jquery -->
-<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
- <!-- link to your app.js -->
- <script src="app.js" charset="utf-8"></script>
- <!-- link to font-awesome -->
-<script src="https://use.fontawesome.com/fb7adda49e.js"></script>
+    <div class="js-sneaker-results"></div>
+
+
+
+
+
+  </main>
+
+  <!-- link to jquery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <!-- link to your app.js -->
+  <script src="app.js" charset="utf-8"></script>
+  <!-- link to font-awesome -->
+  <script src="https://use.fontawesome.com/fb7adda49e.js"></script>
 </body>
+
 </html>

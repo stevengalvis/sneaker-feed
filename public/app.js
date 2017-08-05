@@ -1,5 +1,6 @@
 'use strict';
 
+
 //get data from shopstyle api
 $.ajax({
   url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=adidas+men + shoe&offset=0&limit=10",
@@ -13,10 +14,10 @@ $.ajax({
           if(item.alternateImages.size !== 0) {
             alternateImages = renderAlternateImages(item.alternateImages);
           }
-          resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a>' +  '<div class = "js-alternate-images">' + alternateImages + '</div>' +
+          resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img class = "card-image" src = "' + item.image.sizes.Best.url + '"</img></a>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
           '<p class ="price-label">' + item.priceLabel + '</p>' +
           '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
-          '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div>';
+          '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div></div>';
         });
       }
       else {
@@ -31,7 +32,7 @@ $.ajax({
 function renderAlternateImages(alternateImages) {
   let productImages = '';
   for (let i = 0; i < alternateImages.length; i++) {
-    if(i <= 4) {
+    if(i <= 3) {
       productImages += '<img src = "' + alternateImages[i].sizes.Medium.url + '"</img>';
     }
   }

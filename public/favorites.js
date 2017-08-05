@@ -17,7 +17,7 @@ $.ajax({
 function renderList(shoeData) {
   let resultElement = '';
   shoeData.favorites.forEach(function(item) {
-      resultElement += '<div class = "sneaker-card">'+ '<a href= "' + item.shoeUrl + '">' + '<img src = "' + item.img + '"</img></a>' +
+      resultElement += '<div class ="sneaker-card">'+ '<a href= "' + item.shoeUrl + '">' + '<img src = "' + item.img + '"</img></a>' +
       '<p class ="price-label">' + item.priceLabel + '</p>' +
       '<p class ="branded-name">' + item.brandedName + '</p>' +
       '<button type = "button" class ="remove-item" title ="Remove item">' +

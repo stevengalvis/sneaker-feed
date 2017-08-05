@@ -1,0 +1,19 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sneaker-card {
+   border: 1px solid #E5E5E5;
+   margin-bottom: 20px;
+
+}
+
+.card-image {
+  width: 50%;
+}
+
+
+.card-content {
+  display: inline-block;
+}
