@@ -14,9 +14,11 @@ $.ajax({
           if(item.alternateImages.size !== 0) {
             alternateImages = renderAlternateImages(item.alternateImages);
           }
-          resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">'+ '<a href= "' + item.clickUrl + '">' + '<img class = "card-image" src = "' + item.image.sizes.Best.url + '"</img></a>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
+          resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">' +
+          '<p class ="branded-name">' + item.brandedName + '</p>' +
+           '<div class = "card-main-image">' + '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
           '<p class ="price-label">' + item.priceLabel + '</p>' +
-          '<p class ="branded-name">' + item.brandedName + '</p>' + '<button type ="button" class ="favorite-button" title="Add to favorites">' +
+          '<button type ="button" class ="favorite-button" title="Add to favorites">' +
           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div></div>';
         });
       }
@@ -25,6 +27,13 @@ $.ajax({
       }
       $('.js-sneaker-results').html(resultElement);
   }
+});
+
+//get search query
+$('.search').on('submit', function(e) {
+  e.preventDefault();
+  let searchQuery = $('.search-input').val();
+  console.log(searchQuery);
 });
 
 
