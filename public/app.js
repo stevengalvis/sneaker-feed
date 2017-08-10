@@ -1,9 +1,10 @@
 'use strict';
 
-
+var colorThief = new ColorThief();
+console.log(colorThief);
 //get data from shopstyle api
 $.ajax({
-  url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=adidas+men + shoe&offset=0&limit=10",
+  url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=puma+men + shoe&offset=0&limit=10",
   type: "GET",
   success: function(data, status) {
       console.log(data);
@@ -17,9 +18,9 @@ $.ajax({
           resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">' +
           '<p class ="branded-name">' + item.brandedName + '</p>' +
            '<div class = "card-main-image">' + '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
-          '<p class ="price-label">' + item.priceLabel + '</p>' +
+          '<p class ="price-label">' + item.priceLabel + '</p></div>' +
           '<button type ="button" class ="favorite-button" title="Add to favorites">' +
-          '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div></div>';
+          '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div>';
         });
       }
       else {
@@ -101,11 +102,13 @@ $(function() {
     // event listener for favorites
     //get data from resultElement
     $('.sneaker-card').on('click','.favorite-button', function(e) {
+      console.log($(this).siblings('.card-main-image').find('a').attr('href'));
+
       let shoeData = {
-        brandedName: $(this).siblings('.branded-name').text(),
-        priceLabel: $(this).siblings('.price-label').text(),
-        shoeUrl: $(this).siblings('a').attr('href'),
-        img: $(this).siblings('a').children('img').attr('src')
+        brandedName: $(this).closest('.sneaker-card').find('.branded-name').text(),
+        priceLabel: $(this).siblings('.card-content').find('.price-label').text(),
+        shoeUrl: $(this).siblings('.card-main-image').find('a').attr('href'),
+        img: $(this).siblings('.card-main-image').find('a').children('img').attr('src')
       }
       console.log(shoeData);
       addToFavorites(shoeData);

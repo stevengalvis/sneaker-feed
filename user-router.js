@@ -141,6 +141,11 @@ router.get('/login', passport.authenticate('basic', {session: true}),(req, res) 
 
 
 // TODO: get for user to sign out (req.session.destroy)
+router.get('/logout', (req, res) => {
+  req.session.destroy(function (err) {
+    res.redirect('/');
+  });
+});
 
 router.put('/favorites', isAuthenticated, (req, res) => {
   console.log(req.user.username);
