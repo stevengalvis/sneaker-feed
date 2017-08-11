@@ -2,39 +2,40 @@
 
 var colorThief = new ColorThief();
 console.log(colorThief);
+renderFeedItems('pumas');
 //get data from shopstyle api
-$.ajax({
-  url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=puma+men + shoe&offset=0&limit=10",
-  type: "GET",
-  success: function(data, status) {
-      console.log(data);
-      let resultElement = '';
-      if (data) {
-        data.products.forEach(function(item) {
-          let alternateImages = '';
-          if(item.alternateImages.size !== 0) {
-            alternateImages = renderAlternateImages(item.alternateImages);
-          }
-          resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">' +
-          '<p class ="branded-name">' + item.brandedName + '</p>' +
-           '<div class = "card-main-image">' + '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
-          '<p class ="price-label">' + item.priceLabel + '</p></div>' +
-          '<button type ="button" class ="favorite-button" title="Add to favorites">' +
-          '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div>';
-        });
-      }
-      else {
-        resultElement += '<p>No results</p>';
-      }
-      $('.js-sneaker-results').html(resultElement);
-  }
-});
+// $.ajax({
+//   url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=puma+men + shoe&offset=0&limit=10",
+//   type: "GET",
+//   success: function(data, status) {
+//       console.log(data);
+//       let resultElement = '';
+//       if (data) {
+//         data.products.forEach(function(item) {
+//           let alternateImages = '';
+//           if(item.alternateImages.size !== 0) {
+//             alternateImages = renderAlternateImages(item.alternateImages);
+//           }
+//           resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">' +
+//           '<p class ="branded-name">' + item.brandedName + '</p>' +
+//            '<div class = "card-main-image">' + '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
+//           '<p class ="price-label">' + item.priceLabel + '</p></div>' +
+//           '<button type ="button" class ="favorite-button" title="Add to favorites">' +
+//           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div>';
+//         });
+//       }
+//       else {
+//         resultElement += '<p>No results</p>';
+//       }
+//       $('.js-sneaker-results').html(resultElement);
+//   }
+// });
 
 //get search query
 $('.search').on('submit', function(e) {
   e.preventDefault();
   let searchQuery = $('.search-input').val();
-  console.log(searchQuery);
+  renderFeedItems(searchQuery);
 });
 
 
@@ -51,8 +52,37 @@ function renderAlternateImages(alternateImages) {
 }
 
 // TODO: render products function
+function renderFeedItems(searchQuery) {
+  $.ajax({
+    url: 'http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=' + searchQuery   + '&offset=0&limit=10',
+    type: "GET",
+    success: function(data, status) {
+        console.log(data);
+        let resultElement = '';
+        if (data) {
+          data.products.forEach(function(item) {
+            let alternateImages = '';
+            if(item.alternateImages.size !== 0) {
+              alternateImages = renderAlternateImages(item.alternateImages);
+            }
+            resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">' +
+            '<p class ="branded-name">' + item.brandedName + '</p>' +
+             '<div class = "card-main-image">' + '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
+            '<p class ="price-label">' + item.priceLabel + '</p></div>' +
+            '<button type ="button" class ="favorite-button" title="Add to favorites">' +
+            '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div>';
+            let img = $('.card-main-image').find('a').children('img').attr('src');
+            console.log($('.card-main-image'));
+          });
+        }
+        else {
+          resultElement += '<p>No results</p>';
+        }
+        $('.js-sneaker-results').html(resultElement);
+    }
+  });
+}
 
-//TODO add search box
 
 //dom manipulation
 
@@ -84,20 +114,40 @@ $(function() {
 
     $('.login').on('submit', function(e) {
       e.preventDefault();
-      let data = {
-        username: $("input[name=username]").val(),
-        password: $("input[name=password]").val()
-      }
+      const username = $("input[name=username]").val();
+      const password = $("input[name=password]").val();
+
       $.ajax({
         type: "GET",
         url: 'http://localhost:8080/users/login',
-        data: JSON.stringify(data),
+        headers: {
+          'content-type': "application/json",
+          authorization: "Basic " + btoa(username + ':' + password)
+        },
         contentType: 'application/json',
         success: function(data, status) {
           console.log(data, status);
         }
       });
     });
+
+
+    // event listener for logging out
+    $('.log-out-button').on('click', function(e) {
+      console.log('clicked');
+      logoutUser();
+
+    });
+
+    function logoutUser() {
+      $.ajax({
+          url: "http://localhost:8080/users/logout",
+          type: "GET",
+          success: function() {
+              console.log('logged out');
+          }
+      });
+    }
 
     // event listener for favorites
     //get data from resultElement
