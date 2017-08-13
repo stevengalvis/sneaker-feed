@@ -12,6 +12,7 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="main.css">
@@ -23,43 +24,85 @@
 
 
 
+<div class="form">
 
-    <form action="http://localhost:8080/users" class="sign-up" method="post">
+<ul class="tab-group">
+  <li class ="tab active"><a href="#signup">Sign Up</a></li>
+  <li class="tab"><a href="#login">Log In</a></li>
+</ul>
 
-      <fieldset name="sign-up">
-        <legend>Sign up</legend>
-        <label for="user-name">Username</label><input id="user-name" name="username" type="text" />
-        <label for="first-name">First name</label><input id="first-name" name="firstName" type="text" />
-        <label for="last-name">Last name</label><input id="last-name" name="lastName" type="text" />
-        <label for="password">Password</label><input id="password" name="password" type="password" />
-      </fieldset>
-      <button type="submit">Submit</button>
+<div class="tab-content">
+  <div id ="signup">
+    <h1 class = "register-header">Register</h1>
+
+    <form action="http://localhost:8080/users" class="sign-up-user" method="post">
+
+
+      <div class="top-row">
+        <div class="field-wrap">
+          <label for="first-name">First name</label><input type="text"  required autocomplete="on" id="first-name" name="firstName" />
+      </div>
+
+      <div class="field-wrap" >
+        <label for="last-name">Last name</label><input type="text"  required autocomplete="on" id="last-name" name="lastName"  />
+      </div>
+    </div>
+
+    <div class="field-wrap">
+        <label for="user-name">Username</label><input type="text" id="user-name" name="username"  required autocomplete="on" />
+    </div>
+
+    <div class="field-wrap">
+        <label for="password">Set a Password</label><input type="password" required autocomplete="on" id="password" name="password"  />
+    </div>
+
+
+      <button type="submit" class ="button button-block">Create Account</button>
     </form>
+  </div>
 
 
+  <div id="login">
+  <h1 class="login-header">Welcome Back!</h1>
+    <form action="http://localhost:8080/login" class="login-user" method="post">
 
-    <form action="http://localhost:8080/login" class="login" method="post">
 
-      <fieldset name="login">
-        <legend>Log in</legend>
-        <label for="user-name">Username</label><input id="login-username" name="username" type="text" />
-        <label for="password">Password</label><input id="login-password" name="password" type="password" />
-      </fieldset>
-      <button type="submit">Log in</button>
+        <div class="field-wrap">
+            <label for="user-name">Username</label><input type="text" id="login-username" required autocomplete="on" name="username"  />
+        </div>
+
+        <div class="field-wrap">
+        <label for="password">Password</label><input type="password" id="login-password" name="password" required autocomplete="on"  />
+      </div>
+
+      <button type="submit" class="button button-block">Log in</button>
     </form>
+    </div>
+  </div> <!--tab-content -->
+</div> <!-- form -->
+  <!-- end form -->
 
     <a href="/favorites.html">See Favorites</a>
       <button type="submit" class="log-out-button">Log out</button>
 
 
-  <div class="search-container">
-    <form action="" class = "search">
-      <fieldset>
-        <input type="search" class = "search-input" name="search-query" id="search-query">
-        <button type="submit" class = "search-button" name="search-button"><i class = "fa fa-search"></i></button>
-      </fieldset>
-    </form>
-  </div>
+
+
+
+<!--search box -->
+<div class="search-container">
+  <form action="" class = "search">
+    <fieldset>
+      <input type="search" class = "search-input" name="search-query" id="search-query">
+      <button type="submit" class = "search-button" name="search-button"><i class = "fa fa-search"></i></button>
+    </fieldset>
+  </form>
+</div>
+
+
+
+<!--feed items -->
+
     <div class="js-sneaker-results"></div>
 
 

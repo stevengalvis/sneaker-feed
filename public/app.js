@@ -1,4 +1,4 @@
-'use strict';
+
 
 var colorThief = new ColorThief();
 console.log(colorThief);
@@ -62,6 +62,10 @@ function renderFeedItems(searchQuery) {
         if (data) {
           data.products.forEach(function(item) {
             let alternateImages = '';
+            // let productImg = item.image.sizes.Best.url;
+            // console.log(productImg);
+            // let color = colorThief.getColor(productImg);
+            // console.log(color);
             if(item.alternateImages.size !== 0) {
               alternateImages = renderAlternateImages(item.alternateImages);
             }
@@ -72,7 +76,7 @@ function renderFeedItems(searchQuery) {
             '<button type ="button" class ="favorite-button" title="Add to favorites">' +
             '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div>';
             let img = $('.card-main-image').find('a').children('img').attr('src');
-            console.log($('.card-main-image'));
+            console.log($('.card-main-image').closest('a'));
           });
         }
         else {
@@ -88,7 +92,52 @@ function renderFeedItems(searchQuery) {
 
 
 $(function() {
-    $(".sign-up").on('submit', function(e) {
+
+// adding highlight and active animation to labels
+$('.form').find('input, textarea').on('keyup blur focus', function(e) {
+
+  var $this = $(this);
+  var label = $this.prev('label');
+
+  if (e.type === 'keyup') {
+  			if ($this.val() === '') {
+            label.removeClass('active highlight');
+          } else {
+            label.addClass('active highlight');
+          }
+      } else if (e.type === 'blur') {
+      	if( $this.val() === '' ) {
+      		label.removeClass('active highlight');
+  			} else {
+  		    label.removeClass('highlight');
+  			}
+      } else if (e.type === 'focus') {
+
+        if( $this.val() === '' ) {
+      		label.removeClass('highlight');
+  			}
+        else if( $this.val() !== '' ) {
+  		    label.addClass('highlight');
+  			}
+      }
+});
+
+//sign up and login form switching
+$('.tab a').on('click', function (e) {
+
+  e.preventDefault();
+
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+
+  let target = $(this).attr('href');
+  $('.tab-content > div').not(target).hide();
+
+  $(target).fadeIn(600);
+
+});
+
+    $(".sign-up-user").on('submit', function(e) {
       e.preventDefault();
         console.log('clicked');
         let data = {
@@ -112,7 +161,7 @@ $(function() {
 
     //event listener for logging in
 
-    $('.login').on('submit', function(e) {
+    $('.login-user').on('submit', function(e) {
       e.preventDefault();
       const username = $("input[name=username]").val();
       const password = $("input[name=password]").val();
