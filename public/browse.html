@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Find your shoe</title>
-    <!-- Normalize.css, a cross-browser reset file -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
+<head>
+  <meta charset="utf-8">
+  <title>Node Capstone</title>
+  <!-- Responsive viewport tag, tells small screens that it's responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="float-grid.css">
-      <link rel="stylesheet" href="main.css">
+  <!-- Normalize.css, a cross-browser reset file -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="float-grid.css">
+    <link rel="stylesheet" href="browse.css">
+
+</head>
+
+<body>
+  <main role="main">
+    <!--search box -->
+    <div class="search-container">
+      <form action="" class = "search">
+        <fieldset>
+          <input type="search" class = "search-input" name="search-query" id="search-query">
+          <button type="submit" class = "search-button" name="search-button"><i class = "fa fa-search"></i></button>
+        </fieldset>
+      </form>
+    </div>
 
 
-  </head>
-  <body>
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/n3E-SUrNFLY?autoplay=1&loop=1&start=186&end=205&playlist=n3E-SUrNFLY&rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe> -->
+
 
 <div class="form">
 
@@ -77,32 +93,33 @@
 </div> <!-- form -->
   <!-- end form -->
 
-            <ul>
-              <div class="col-4">
-                  <li><img src="images/shoes.png" alt=""><p class="icon-description">Find your next shoe</p></li>
-              </div>
+    <a href="/favorites.html">See Favorites</a>
+      <button type="submit" class="log-out-button">Log out</button>
 
-            <div class="col-4">
-              <li> <img src="images/like.png" alt=""><p class="
-                icon-description">Keep track of your favorites</p></li>
-            </div>
 
-              <div class="col-4">
-              <li><img src="images/cart.png" alt=""><p class="icon-description">See where to Buy</p></li>
-              </div>
-            </ul>
-            </div>
-    </div>
 
-    <div class="button-wrapper">
-      <a href="#" class="action-button shadow animate green">Find your Sneaker</a>
-    </div>
-    <!-- link to jquery -->
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 
-    <!-- link to your app.js -->
-    <script src="app.js" charset="utf-8"></script>
-    <!-- link to font-awesome -->
-    <script src="https://use.fontawesome.com/fb7adda49e.js"></script>
-  </body>
+
+
+
+
+<!--feed items -->
+
+    <div colorify-main-color class="js-sneaker-results"></div>
+
+
+
+
+
+  </main>
+
+  <!-- link to jquery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+  <!-- link to your app.js -->
+  <script src="browse.js" charset="utf-8"></script>
+  <!-- link to font-awesome -->
+  <script src="https://use.fontawesome.com/fb7adda49e.js"></script>
+</body>
+
 </html>
