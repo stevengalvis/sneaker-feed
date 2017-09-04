@@ -30,11 +30,13 @@ a:hover {
 
 .form {
   background: rgba(19, 35, 47, 0.9);
+  position: relative;
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  z-index: 50 !important;
 }
 
 .tab-group {

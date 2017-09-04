@@ -4,6 +4,39 @@
   box-sizing: border-box;
 }
 
+/************************
+  header
+*************************/
+
+.nav-wrapper {
+  position: absolute;
+  left: 850px;
+  top: 5px;
+  z-index: 100;
+}
+
+
+/************************
+  Vido
+*************************/
+
+video {
+  width: 100%;
+  height: auto;
+  z-index: -100;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+
+/************************
+  icons
+*************************/
+
+.icons-list li {
+  list-style: none;
+}
+
 
 .icons-wrapper  li {
   list-style: none;
@@ -11,10 +44,6 @@
 
 .icons-wrapper {
   text-align: center;
-}
-
-iframe {
-  display: none;
 }
 
 
@@ -75,11 +104,16 @@ a:hover {
 
 .form {
   background: rgba(19, 35, 47, 0.9);
+  position: absolute;
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  display: none;
+  top: 0px;
+  left: 250px;
+  z-index: 150;
 }
 
 .tab-group {
