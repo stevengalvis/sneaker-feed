@@ -116,7 +116,7 @@ label.highlight {
 color: #ffffff;
 }
 
-input, textarea {
+.form input textarea {
   font-size: 22px;
   display: block;
   width: 100%;
@@ -132,7 +132,7 @@ input, textarea {
     transition: border-color .25s ease, box-shadow .25s ease;
 }
 
-input:focus, textarea:focus {
+.form input:focus, .form textarea:focus {
   outline: 0;
   border-color: #1ab188;
 }
@@ -273,8 +273,54 @@ Feed items and images
 /************************
 search field and button
 *************************/
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
-.search-container {
+.search {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+.search:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-family: 'FontAwesome';
+  content: '\f002';
+  background: #8FC357;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-smooth: always;
+}
+
+.search-term {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border: 5px solid #8FC357;
+  padding: 5px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+/*.search-container {
   text-align: center;
 }
 
@@ -300,6 +346,8 @@ search field and button
   color: #666;
   border: 0 none;
   z-index: 2;
+
+
 }
 
 .search-input:focus {
@@ -326,9 +374,9 @@ search field and button
 
 .search-button {
   z-index: 1;
-  width: 50px;
+  width: 10px;
   border: 0 none;
-  background: #0091ea;
+  background: none;
   -webkit-transform: translate(-50px, 0);
   -moz-transform: translate(-50px, 0);
           transform: translate(-50px, 0);
@@ -355,7 +403,7 @@ search field and button
 
 
 }
-
+*/
 
 /* Non-mobile, grid */
 @media only screen and (min-width: 640px) {

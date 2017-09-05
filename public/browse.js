@@ -6,8 +6,9 @@ renderFeedItems('pumas');
 //get search query
 $('.search').on('submit', function(e) {
   e.preventDefault();
-  let searchQuery = $('.search-input').val();
+  let searchQuery = $('.search-term').val();
   renderFeedItems(searchQuery);
+  
 });
 
 
