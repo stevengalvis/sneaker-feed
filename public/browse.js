@@ -1,5 +1,5 @@
 
-renderFeedItems('pumas');
+renderFeedItems(' mens pumas');
 
 
 
@@ -8,7 +8,7 @@ $('.search').on('submit', function(e) {
   e.preventDefault();
   let searchQuery = $('.search-term').val();
   renderFeedItems(searchQuery);
-  
+
 });
 
 

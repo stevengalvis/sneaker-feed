@@ -16,25 +16,35 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="float-grid.css">
-    <link rel="stylesheet" href="browse.css">
+  <link rel="stylesheet" href="browse.css">
 
 </head>
 
 <body>
+
+  <div class="nav-wrapper">
+    <ul>
+      <li class="favorites-button"><a href="/favorites.html">See Favorites</a>
+
+      <li class="log-out">
+          <button type="submit" class="log-out-button">Log out</button>
+    
+    </ul>
+
+
+  </div>
+
   <main role="main">
     <!--search box -->
-        <form action="" class ="search">
-            <input type="search" class ="search-term" placeholder="Enter a sneaker" name="search-query" id="search-query">
-            <button type="submit" class = "search-button" name="search-button"></button>
+    <form action="" class="search">
+      <input type="search" class="search-term" placeholder="Enter a sneaker" name="search-query" id="search-query">
+      <button type="submit" class="search-button" name="search-button"></button>
 
-        </form>
+    </form>
 
 
 
-    <a href="/favorites.html">See Favorites</a>
-      <button type="submit" class="log-out-button">Log out</button>
-
-<!--feed items -->
+    <!--feed items -->
 
     <div class="js-sneaker-results"></div>
 

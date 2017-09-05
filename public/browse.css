@@ -251,14 +251,7 @@ Feed items and images
 
 }
 
-.favorite-button {
-  position: relative;
-  color: #969696;
-  border: none;
-  right: 0;
-  background-color: transparent;
-  cursor: pointer;
-}
+
 
 .wrapper-bottom-card {
   position: absolute;
@@ -266,9 +259,7 @@ Feed items and images
   bottom: 5px;
 }
 
-.favorite-button:hover {
-  color: #ff5a5f;
-}
+
 
 /************************
 search field and button
@@ -278,7 +269,8 @@ search field and button
 .search {
   width: 100%;
   position: relative;
-  margin-top: 20px;
+  margin-top: 100px;
+  margin-bottom: 40px;
 }
 .search:before {
   position: absolute;
@@ -404,6 +396,44 @@ search field and button
 
 }
 */
+
+
+/************************
+nav
+*************************/
+
+.nav-wrapper {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  width: auto;
+}
+
+.nav-wrapper li {
+  display: inline-block;
+  padding: 4px;
+}
+
+.favorite-button {
+  color: #969696;
+  border: none;
+  width: auto;
+  background-color: transparent;
+  cursor: pointer;
+
+
+}
+
+.log-out-button {
+  display: inline-block;
+  width: auto;
+  cursor: pointer;
+
+}
+
+.favorite-button:hover {
+  color: #ff5a5f;
+}
 
 /* Non-mobile, grid */
 @media only screen and (min-width: 640px) {
