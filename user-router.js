@@ -34,8 +34,8 @@ const basicStrategy = new BasicStrategy((username, password, callback) => {
 
 router.use(require('express-session')({
   secret: 'something something',
-  resave: true,
-  saveUninitialized: true
+  resave: false,
+  saveUninitialized: false
 }));
 
 passport.use(basicStrategy);
@@ -143,6 +143,7 @@ router.get('/login', passport.authenticate('basic', {session: true}),(req, res) 
 // TODO: get for user to sign out (req.session.destroy)
 router.get('/logout', (req, res) => {
   req.session.destroy(function (err) {
+    console.log(req.user);
     res.redirect('/');
   });
 });

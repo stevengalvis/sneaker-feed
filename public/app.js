@@ -64,7 +64,8 @@ $('.form').find('input, textarea').on('keyup blur focus', function(e) {
           console.log(data, status);
         }
       });
-
+       $("input[name=username]").val('');
+       $("input[name=password]").val('');
 
   });
 

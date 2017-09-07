@@ -92,10 +92,10 @@ video {
   text-decoration: none;
 }
 
-.green {
-background-color: #82BF56;
-border-bottom: 5px solid #669644;
-text-shadow: 0px -2px #669644;
+.feed-btn {
+background-color: #424242;
+border-bottom: 5px solid #9E9E9E;
+text-shadow: 0px -2px #9E9E9E;
 }
 
 .action-button:active {
