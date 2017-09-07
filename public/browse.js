@@ -204,7 +204,7 @@ $('.tab a').on('click', function (e) {
     // event listener for favorites
     //get data from resultElement
     $('.sneaker-card').on('click','.favorite-button', function(e) {
-        console.log($(this).parent().siblings('.card-main-image').find('a').attr('href'));
+  
       let shoeData = {
         brandedName: $(this).closest('.sneaker-card').find('.branded-name').text(),
         priceLabel: $(this).parent().siblings('.card-content').find('.price-label').text(),
