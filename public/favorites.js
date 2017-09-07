@@ -7,6 +7,7 @@ $.ajax({
   success: function(data) {
     if(data) {
       renderList(data)
+      console.log(data);
     }
     else {
       resultElement += '<p>No results</p>';
@@ -15,6 +16,7 @@ $.ajax({
 });
 
 function renderList(shoeData) {
+  console.log(shoeData);
   let resultElement = '';
   shoeData.favorites.forEach(function(item) {
       resultElement += '<div class ="sneaker-card">'+ '<a href= "' + item.shoeUrl + '">' + '<img src = "' + item.img + '"</img></a>' +
@@ -22,8 +24,8 @@ function renderList(shoeData) {
       '<p class ="branded-name">' + item.brandedName + '</p>' +
       '<button type = "button" class ="remove-item" title ="Remove item">' +
       '<i class="fa fa-trash-o" aria-hidden="true"></i></button></div>';
-    });
 
+    });
   $('.js-favorites-list').html(resultElement);
 }
 

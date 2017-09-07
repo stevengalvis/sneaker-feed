@@ -204,12 +204,12 @@ $('.tab a').on('click', function (e) {
     // event listener for favorites
     //get data from resultElement
     $('.sneaker-card').on('click','.favorite-button', function(e) {
-
+        console.log($(this).parent().siblings('.card-main-image').find('a').attr('href'));
       let shoeData = {
         brandedName: $(this).closest('.sneaker-card').find('.branded-name').text(),
-        priceLabel: $(this).siblings('.card-content').find('.price-label').text(),
-        shoeUrl: $(this).siblings('.card-main-image').find('a').attr('href'),
-        img: $(this).siblings('.card-main-image').find('a').children('img').attr('src')
+        priceLabel: $(this).parent().siblings('.card-content').find('.price-label').text(),
+        shoeUrl: $(this).parent().siblings('.card-main-image').find('a').attr('href'),
+        img: $(this).parent().siblings('.card-main-image').find('a').children('img').attr('src')
       }
       console.log(shoeData);
       addToFavorites(shoeData);
