@@ -29,6 +29,7 @@
   top: 70%;
   height: 50%;
   margin-top: -25%;
+  margin-bottom: 5%;
   text-align: center;
 }
 
@@ -308,13 +309,14 @@ About Informaiton
 *************************/
 
 .about {
-  position: relative;
+  padding-top: 35px;
   padding-bottom: 60px;
-  text-align: center;
-  margin-top: 20px;
   width: 100%;
   background: #f2f2f2;
   text-align: left;
+  position: relative;
+  z-index: 1;
+  color: #333333;
 }
 
 .about-text {
@@ -386,6 +388,45 @@ About Informaiton
 }
 
 
+/************************
+  shopping div
+*************************/
+
+
+.shopping {
+  padding-top: 35px;
+  padding-bottom: 80px;
+  width: 100%;
+  background: #f2f2f2;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  color: #333333;
+}
+
+.shopping-text {
+  display: inline-block;
+  width: 40%;
+  position: relative;
+}
+
+.shopping-text h2 {
+  line-height: 45px;
+  font-size: 40px;
+  margin: 0;
+}
+
+.shopping-text p {
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.shopping-img {
+  display: inline-block;
+  width: 55%;
+  float: right;
+}
+
 
 @media only screen and (max-width: 768px) {
   .about {
@@ -400,9 +441,9 @@ About Informaiton
     padding: 0;
   }
 
-  .sneaker {
+  .about-img {
     display: block;
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 15px;
     padding: 0;
@@ -424,5 +465,24 @@ About Informaiton
     margin-top: 20px;
     padding: 0;
 
+  }
+
+
+  .shopping-text {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0;
+    float: none;
+  }
+
+  .shopping-img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0;
+    float: none;
   }
 }

@@ -72,10 +72,10 @@ function renderFeedItems(searchQuery) {
         resultElement += '<div class="col-12"><div class="sneaker-card">' +
         '<p class="branded-name">' + item.brandedName + '</p>' +
         '<div class="card-main-image">' +
-        '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
-           '<p class ="price-label">' + item.priceLabel + '</p></div>' +
-           '<div class ="wrapper-bottom-card">' +
-           '<button type ="button" class ="favorite-button" title="Add to favorites">' +
+        '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class="js-alternate-images">' + alternateImages + '</div>' +
+           '<p class="price-label">' + item.priceLabel + '</p></div>' +
+           '<div class="wrapper-bottom-card">' +
+           '<button type="button" class="favorite-button" title="Add to favorites">' +
            '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div>';
             if(i % 2 === 0) {
               resultElement += '</div><div class ="row">';
@@ -204,7 +204,7 @@ $('.tab a').on('click', function (e) {
     // event listener for favorites
     //get data from resultElement
     $('.sneaker-card').on('click','.favorite-button', function(e) {
-  
+      console.log('clicked');
       let shoeData = {
         brandedName: $(this).closest('.sneaker-card').find('.branded-name').text(),
         priceLabel: $(this).parent().siblings('.card-content').find('.price-label').text(),
