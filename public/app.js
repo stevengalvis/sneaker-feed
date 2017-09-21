@@ -29,20 +29,6 @@ $('.form').find('input, textarea').on('keyup blur focus', function(e) {
       contentType: "application/json",
       success: function(data, status) {
         console.log(data, status);
-        swal({
-      title: '',
-      text: 'Account succesfully created',
-      timer: 1000
-      }).then(
-      function () {},
-      // handling the promise rejection
-      function (dismiss) {
-      if (dismiss === 'timer') {
-      console.log('I was closed by the timer')
-      }
-      }
-      )
-
       }
     });
   });
@@ -76,20 +62,6 @@ $('.form').find('input, textarea').on('keyup blur focus', function(e) {
         contentType: 'application/json',
         success: function(data, status) {
           console.log(data, status);
-          swal({
-  title: '',
-  text: 'Logged in succesfully',
-  timer: 1000
-}).then(
-  function () {},
-  // handling the promise rejection
-  function (dismiss) {
-    if (dismiss === 'timer') {
-      console.log('I was closed by the timer')
-    }
-  }
-)
-
         }
       });
        $("input[name=username]").val('');

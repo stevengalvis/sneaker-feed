@@ -34,7 +34,7 @@ function renderList(shoeData) {
        resultElement += '<div class="col-12"><div class="sneaker-card">' +
        '<p class="branded-name">' + item.brandedName + '</p>' +
        '<div class="card-main-image">' +
-       '<a href= "' + item.shoeUrl + '">' + '<img src = "' + item.img + '"</img></a></div>' + '<div class ="card-content">' +
+       '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.img + '"</img></a></div>' + '<div class ="card-content">' +
           '<p class ="price-label">' + item.priceLabel + '</p></div>' +
           '<div class ="wrapper-bottom-card">' +
           '<button type = "button" class ="remove-item" title ="Remove item">' +
@@ -68,12 +68,11 @@ function removeFavorite(shoeData) {
 $(function() {
 
   $('.js-favorites-list').on('click', '.remove-item', function(e) {
-  
     let shoeData = {
-      brandedName: $(this).closest('.sneaker-card').find('.branded-name').text(),
-      priceLabel: $(this).parent().siblings('.card-content').find('.price-label').text(),
-      shoeUrl: $(this).parent().siblings('.card-main-image').find('a').attr('href'),
-      img: $(this).parent().siblings('.card-main-image').find('a').children('img').attr('src')
+      brandedName: $(this).parent().siblings('.branded-name').text(),
+      priceLabel: $(this).parent().siblings('.price-label').text(),
+      shoeUrl: $(this).parent().siblings('a').attr('href'),
+      img: $(this).parent().siblings('a').children('img').attr('src')
     };
     console.log(shoeData);
     removeFavorite(shoeData);
