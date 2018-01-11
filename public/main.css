@@ -20,30 +20,25 @@
   position: relative;
   vertical-align: middle;
   height: auto;
-
 }
 
 .header-wrapper {
-  position: absolute;
-  width: 100%;
-  top: 70%;
-  height: 50%;
-  margin-top: -25%;
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
 }
 
 .main-header {
-position: absolute;
-  text-align: center;
   font-size: 3rem;
   text-transform: uppercase;
-  letter-spacing: .3rem;
-   color: #fff;
-   /*top: 150px;*/
-   font-weight: 400;
-   z-index: 2
+  letter-spacing: 0.3rem;
+  color: #fff;
+  font-weight: 500;
 }
-
 
 /************************
   Vido
@@ -57,7 +52,6 @@ video {
   filter: grayscale(100%);
 }
 
-
 /************************
   icons
 *************************/
@@ -66,8 +60,7 @@ video {
   list-style: none;
 }
 
-
-.icons-wrapper  li {
+.icons-wrapper li {
   list-style: none;
 }
 
@@ -75,7 +68,6 @@ video {
   text-align: center;
   padding-top: 20px;
 }
-
 
 /************************
   Button
@@ -86,21 +78,21 @@ video {
   -webkit-transition: all 0.1s;
   padding: 10px 40px;
   border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 25px;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
 
 .feed-btn {
-background-color: #424242;
-border-bottom: 5px solid #9E9E9E;
-text-shadow: 0px -2px #9E9E9E;
+  background-color: #424242;
+  border-bottom: 5px solid #9e9e9e;
+  text-shadow: 0px -2px #9e9e9e;
 }
 
 .action-button:active {
   transform: translate(0px, 5px);
-  -webkit-transform: translate(0px,5px);
+  -webkit-transform: translate(0px, 5px);
   border-bottom: 1px solid;
 }
 
@@ -109,9 +101,7 @@ text-shadow: 0px -2px #9E9E9E;
   text-align: center;
   width: 100%;
   margin: 50px auto;
-
 }
-
 
 /************************
 REGISTER AND SIGN IN
@@ -122,14 +112,15 @@ REGISTER AND SIGN IN
 /* TODO: change input for forms add a class */
 /* TODO: add class to form buttons */
 
-.register-header, .login-header {
-  font-family: 'Sofia', cursive;
+.register-header,
+.login-header {
+  font-family: "Sofia", cursive;
 }
 a {
   text-decoration: none;
-    color: #1ab188;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+  color: #1ab188;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 a:hover {
@@ -173,18 +164,17 @@ a:hover {
   width: 50%;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .tab-group li a:hover {
-  background: #1FCE6D;
-  color:#ffffff;
-
+  background: #1fce6d;
+  color: #ffffff;
 }
 
 .tab-group .active a {
-  background: #1FCE6D;
+  background: #1fce6d;
   color: #ffffff;
 }
 
@@ -203,12 +193,12 @@ label {
   position: absolute;
   -webkit-transform: translateY(6px);
   -moz-transform: translateY(6px);
-        transform:translateY(6px);
+  transform: translateY(6px);
   left: 13px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
-      transition: all 0.25s ease;
+  transition: all 0.25s ease;
   -webkit-backface-visbility: hidden;
   -moz-backface-visibility: hidden;
   pointer-events: none;
@@ -218,16 +208,17 @@ label {
 label.active {
   -webkit-transform: translateY(50px);
   -moz-transform: translateY(50px);
-      transform: translateY(50px);
-      left: 2px;
-      font-size: 14px;
+  transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
 }
 
 label.highlight {
-color: #ffffff;
+  color: #ffffff;
 }
 
-input, textarea {
+input,
+textarea {
   font-size: 22px;
   display: block;
   width: 100%;
@@ -238,12 +229,13 @@ input, textarea {
   border: 1px solid #a0b3b0;
   color: #ffffff;
   border-radius: 0;
-  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
-  -moz-transition: border-color .25s ease, box-shadow .25s ease;
-    transition: border-color .25s ease, box-shadow .25s ease;
+  -webkit-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  -moz-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: 0;
   border-color: #1ab188;
 }
@@ -274,7 +266,6 @@ textarea {
   margin: 0;
 }
 
-
 .button {
   border: 0;
   outline: none;
@@ -283,13 +274,13 @@ textarea {
   font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #1FCE6D;
+  letter-spacing: 0.1em;
+  background: #1fce6d;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-      -webkit-appearance: none;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
   cursor: pointer;
 }
 
@@ -343,8 +334,6 @@ About Informaiton
 .sneaker {
   width: 100%;
 }
-
-
 
 /*@media only screen and (max-width: 768px) {
   .sneaker {
