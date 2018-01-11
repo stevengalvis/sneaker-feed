@@ -1,2 +1,3 @@
  /plugins/sweetalert-master
- node_modules
+ # Dependency directories
+ /node_modules
