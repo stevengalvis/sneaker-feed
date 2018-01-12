@@ -42,65 +42,50 @@
     </video>
   </div>
 
+<!-- form -->
 
   <div class="form">
-
     <ul class="tab-group">
       <li class="tab active"><a href="#signup">Sign Up</a></li>
       <li class="tab"><a href="#login">Log In</a></li>
     </ul>
-
     <div class="tab-content">
       <div id="signup">
         <h1 class="register-header">Register</h1>
-
         <form action="http://localhost:8080/users" class="sign-up-user" method="post">
-
-
           <div class="top-row">
             <div class="field-wrap">
               <label for="first-name">First name</label><input type="text" required autocomplete="on" id="first-name" name="firstName" />
             </div>
-
             <div class="field-wrap">
               <label for="last-name">Last name</label><input type="text" required autocomplete="on" id="last-name" name="lastName" />
             </div>
           </div>
-
           <div class="field-wrap">
             <label for="user-name">Username</label><input type="text" id="user-name" name="username" required autocomplete="on" />
           </div>
-
           <div class="field-wrap">
             <label for="password">Set a Password</label><input type="password" required autocomplete="on" id="password" name="password" />
           </div>
-
-
           <button type="submit" class="button button-block">Create Account</button>
         </form>
       </div>
 
-
       <div id="login">
         <h1 class="login-header">Welcome Back!</h1>
         <form action="http://localhost:8080/login" class="login-user" method="post">
-
-
           <div class="field-wrap">
             <label for="user-name">Username</label><input type="text" id="login-username" required autocomplete="on" name="username" />
           </div>
-
           <div class="field-wrap">
             <label for="password">Password</label><input type="password" id="login-password" name="password" required autocomplete="on" />
           </div>
-
           <button type="submit" class="button button-block">Log in</button>
         </form>
       </div>
     </div>
     <!--tab-content -->
   </div>
-  <!-- form -->
   <!-- end form -->
 
   <div class="about">
@@ -119,37 +104,36 @@
     </div>
   </div>
 
-  <div class="favorites">
+  <div class="about">
     <div class="row">
-      <div class="col-12">
-        <div class="favorites-text">
+      <div class="col-6">
+        <div class="about-text">
           <h2>Like your favorite shoes and keep a list</h2>
           <p>Keep track of shoes you want to purchase by adding to your favorites list. Never miss out on a pair you love! </p>
         </div>
-        <div class="like-img">
-          <img class="like-icon" src="images/bigger-like.png" alt="Like Image">
-        </div>
-
       </div>
-
+      <div class="col-6">
+        <div class="about-img">
+          <img class="responsive-image" src="images/bigger-like.png" alt="Like Image">
+        </div>
+      </div>
     </div>
-
   </div>
 
-  <div class="shopping">
+  <div class="about">
     <div class="row">
-      <div class="col-12">
-        <div class="shopping-text">
+      <div class="col-6">
+        <div class="about-text">
           <h2>Buy your favorite shoes</h2>
           <p>Easily shop your favorite shoes with a redirect to the site where you can purchase</p>
         </div>
-        <div class="shopping-img">
-          <img class="shopping-icon" src="images/shopping-cart.png" alt="">
+      </div>
+      <div class="col-6">
+        <div class="about-img">
+          <img class="responsive-image" src="images/shopping-cart.png" alt="">
         </div>
       </div>
-
     </div>
-
   </div>
 
 
