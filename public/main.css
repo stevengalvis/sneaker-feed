@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.responsive-image {
+  max-width: 100%;
+}
+
 /************************
   header
 *************************/
@@ -298,45 +302,11 @@ textarea {
 About Informaiton
 *************************/
 
-.about {
-  position: relative;
-  padding-bottom: 60px;
-  text-align: center;
-  margin-top: 20px;
-  width: 100%;
-  background: #f2f2f2;
-  text-align: left;
-}
-
-.about-text {
-  display: inline-block;
-  width: 45%;
-  position: relative;
-}
-
 .about-text h2 {
-  line-height: 45px;
-  font-size: 40px;
-  margin-bottom: 0;
+  font-size: 3.7em;
+  line-height: 1.2em;
 }
 
 .about-text p {
-  /*white-space: nowrap;*/
+  font-size: 1.7em;
 }
-
-.about-img {
-  display: inline-block;
-  width: 45%;
-  float: right;
-  margin-top: 40px;
-}
-
-.sneaker {
-  width: 100%;
-}
-
-/*@media only screen and (max-width: 768px) {
-  .sneaker {
-    width: 70%;
-  }
-}*/
