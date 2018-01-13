@@ -99,7 +99,6 @@ video {
 REGISTER AND SIGN IN
 *************************/
 /* TODO: change style for a elements */
-/* TODO: make form responsive */
 /* TODO: add h1 to the h1 in the forms  */
 /* TODO: change input for forms add a class */
 /* TODO: add class to form buttons */
@@ -116,20 +115,19 @@ a {
 }
 
 a:hover {
-  color: #179b77;
+  color: #2f5c7f;
 }
 
 .form {
   background: rgba(19, 35, 47, 0.9);
-
+  width: 90%;
   height: auto;
-  width: auto;
   position: absolute;
   top: 30%;
   left: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
-  padding: 40px;
-  border-radius: 4px;
+  padding: 40px 80px;
+  border-radius: 1em;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   max-width: 600px;
   margin: 40px auto;
@@ -162,6 +160,7 @@ a:hover {
   cursor: pointer;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
+  white-space: nowrap;
 }
 
 .tab-group li a:hover {
@@ -233,7 +232,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: 0;
-  border-color: #1ab188;
+  border-color: #2f5c7f;
 }
 
 textarea {
@@ -262,12 +261,12 @@ textarea {
   margin: 0;
 }
 
-.button {
+.form-button {
   border: 0;
   outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
+  border-radius: 1em;
+  padding: 15px 5px;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -311,8 +310,12 @@ About Informaiton
 BREAKPOINTS
 *************************/
 
-/* @media screen and (min-width: 600px) {
-  .about-img {
-    max-height: 50%;
+@media screen and (min-width: 600px) {
+  .form-button {
+    font-size: 2rem;
   }
-} */
+  .form {
+    padding: 40px;
+    width: auto;
+  }
+}
