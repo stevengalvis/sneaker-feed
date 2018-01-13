@@ -121,16 +121,19 @@ a:hover {
 
 .form {
   background: rgba(19, 35, 47, 0.9);
+  height: auto;
+  width: auto;
   position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
   padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-  display: none;
-  top: 0px;
-  left: 250px;
+  max-width: 600px;
+  margin: 40px auto;
   z-index: 150;
+  display: none;
 }
 
 .tab-group {
