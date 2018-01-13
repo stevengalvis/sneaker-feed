@@ -78,7 +78,7 @@ video {
 }
 
 .feed-btn:hover {
-  background-color: #32936f;
+  background-color: #2f5c7f;
   color: #fff;
 }
 
@@ -121,6 +121,7 @@ a:hover {
 
 .form {
   background: rgba(19, 35, 47, 0.9);
+
   height: auto;
   width: auto;
   position: absolute;
@@ -164,12 +165,12 @@ a:hover {
 }
 
 .tab-group li a:hover {
-  background: #1fce6d;
+  background: #89aecc;
   color: #ffffff;
 }
 
 .tab-group .active a {
-  background: #1fce6d;
+  background: #89aecc;
   color: #ffffff;
 }
 
@@ -270,7 +271,7 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: #1fce6d;
+  background: #89aecc;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
