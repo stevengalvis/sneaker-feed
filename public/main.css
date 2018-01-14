@@ -242,7 +242,7 @@ textarea {
 
 .field-wrap {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .top-row::after {
@@ -253,12 +253,12 @@ textarea {
 
 .top-row > div {
   float: left;
-  width: 48%;
+  width: 100%;
   margin-right: 4%;
 }
 
 .top-row > div:last-child {
-  margin: 0;
+  margin-bottom: 10px;
 }
 
 .form-button {
@@ -313,9 +313,24 @@ BREAKPOINTS
 @media screen and (min-width: 600px) {
   .form-button {
     font-size: 2rem;
+    margin-top: 20px;
   }
   .form {
     padding: 40px;
     width: auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .top-row > div {
+    width: 48%;
+  }
+
+  .field-wrap {
+    margin-bottom: 40px;
+  }
+
+  .top-row > div:last-child {
+    margin: 0;
   }
 }
