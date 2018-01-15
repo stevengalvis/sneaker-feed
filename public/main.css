@@ -44,6 +44,18 @@
   font-weight: 500;
 }
 
+.login-register-btn {
+}
+
+nav button {
+  background: none;
+  border: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
 /************************
   Vido
 *************************/
