@@ -9,16 +9,35 @@
 }
 
 /************************
-  header
+  NAV
 *************************/
-
 .nav-wrapper {
-  position: absolute;
+  /* position: absolute; */
   right: 2%;
   top: 2%;
-
   z-index: 100;
 }
+
+nav button {
+  background: none;
+  border: none;
+}
+
+nav img {
+  max-height: 42px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+/************************
+  header
+*************************/
 
 .header-background {
   position: relative;
@@ -42,18 +61,6 @@
   letter-spacing: 0.3rem;
   color: #fff;
   font-weight: 500;
-}
-
-.login-register-btn {
-}
-
-nav button {
-  background: none;
-  border: none;
-}
-
-nav ul {
-  list-style: none;
 }
 
 /************************
