@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 /************************
 REGISTER AND SIGN IN
 *************************/
@@ -14,14 +13,15 @@ REGISTER AND SIGN IN
 /* TODO: change input for forms add a class */
 /* TODO: add class to form buttons */
 
-.register-header, .login-header {
-  font-family: 'Sofia', cursive;
+.register-header,
+.login-header {
+  font-family: "Sofia", cursive;
 }
 a {
   text-decoration: none;
-    color: #1ab188;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+  color: #1ab188;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 a:hover {
@@ -62,18 +62,17 @@ a:hover {
   width: 50%;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .tab-group li a:hover {
-  background: #1FCE6D;
-  color:#ffffff;
-
+  background: #1fce6d;
+  color: #ffffff;
 }
 
 .tab-group .active a {
-  background: #1FCE6D;
+  background: #1fce6d;
   color: #ffffff;
 }
 
@@ -92,12 +91,12 @@ label {
   position: absolute;
   -webkit-transform: translateY(6px);
   -moz-transform: translateY(6px);
-        transform:translateY(6px);
+  transform: translateY(6px);
   left: 13px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
-      transition: all 0.25s ease;
+  transition: all 0.25s ease;
   -webkit-backface-visbility: hidden;
   -moz-backface-visibility: hidden;
   pointer-events: none;
@@ -107,13 +106,13 @@ label {
 label.active {
   -webkit-transform: translateY(50px);
   -moz-transform: translateY(50px);
-      transform: translateY(50px);
-      left: 2px;
-      font-size: 14px;
+  transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
 }
 
 label.highlight {
-color: #ffffff;
+  color: #ffffff;
 }
 
 .form input textarea {
@@ -127,12 +126,13 @@ color: #ffffff;
   border: 1px solid #a0b3b0;
   color: #ffffff;
   border-radius: 0;
-  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
-  -moz-transition: border-color .25s ease, box-shadow .25s ease;
-    transition: border-color .25s ease, box-shadow .25s ease;
+  -webkit-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  -moz-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.form input:focus, .form textarea:focus {
+.form input:focus,
+.form textarea:focus {
   outline: 0;
   border-color: #1ab188;
 }
@@ -163,7 +163,6 @@ textarea {
   margin: 0;
 }
 
-
 .button {
   border: 0;
   outline: none;
@@ -172,13 +171,13 @@ textarea {
   font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #1FCE6D;
+  letter-spacing: 0.1em;
+  background: #1fce6d;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-      -webkit-appearance: none;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
   cursor: pointer;
 }
 
@@ -197,14 +196,16 @@ Feed items and images
 *************************/
 
 .sneaker-card {
-   border: 1px solid #E5E5E5;
-   margin-bottom: 20px;
-   border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  /* border-radius: 10px;
   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
-   position: relative;
-
+  -moz-border-radius: 10px; */
+  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+  position: relative;
 }
 
 .card-main-image {
@@ -223,7 +224,6 @@ Feed items and images
   width: 100%;
 }
 
-
 .card-content {
   display: inline-block;
   overflow: hidden;
@@ -233,14 +233,13 @@ Feed items and images
   display: none;
 }
 
-
 .branded-name {
-   font-family: "Roboto";
-   padding: 5px;
-   font-size: 16px;
-   letter-spacing: 1px;
-   height: 36px;
-   font-weight: 500;
+  font-family: "Roboto";
+  padding: 5px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  height: 36px;
+  font-weight: 500;
 }
 
 .price-label {
@@ -248,18 +247,13 @@ Feed items and images
   top: 7px;
   left: 10px;
   font-weight: 600;
-
 }
-
-
 
 .wrapper-bottom-card {
   position: absolute;
   right: 10px;
   bottom: 5px;
 }
-
-
 
 /************************
 search field and button
@@ -279,9 +273,9 @@ search field and button
   width: 40px;
   height: 40px;
   line-height: 40px;
-  font-family: 'FontAwesome';
-  content: '\f002';
-  background: #8FC357;
+  font-family: "FontAwesome";
+  content: "\f002";
+  background: #8fc357;
   text-align: center;
   color: #fff;
   border-radius: 5px;
@@ -290,11 +284,8 @@ search field and button
 }
 
 .search-term {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   width: 100%;
-  border: 5px solid #8FC357;
+  border: 5px solid #8fc357;
   padding: 5px;
   height: 40px;
   border-radius: 5px;
@@ -310,7 +301,6 @@ search field and button
   opacity: 0;
   cursor: pointer;
 }
-
 
 /*.search-container {
   text-align: center;
@@ -397,7 +387,6 @@ search field and button
 }
 */
 
-
 /************************
 nav
 *************************/
@@ -420,15 +409,12 @@ nav
   width: auto;
   background-color: transparent;
   cursor: pointer;
-
-
 }
 
 .log-out-button {
   display: inline-block;
   width: auto;
   cursor: pointer;
-
 }
 
 .favorite-button:hover {
@@ -437,20 +423,17 @@ nav
 
 /* Non-mobile, grid */
 @media only screen and (min-width: 640px) {
-
   .col-12 {
     width: 50%;
     float: left;
   }
 
- .branded-name {
-   padding: 10px;
- }
+  .branded-name {
+    padding: 10px;
+  }
 
   .js-alternate-images {
     display: inline-block;
     /*margin-top: 10px;*/
-
   }
-
 }

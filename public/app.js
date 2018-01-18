@@ -28,7 +28,7 @@ $(function() {
     };
 
     $.ajax({
-      url: "http://localhost:8080/users",
+      url: "/users",
       type: "POST",
       data: JSON.stringify(data),
       contentType: "application/json",
