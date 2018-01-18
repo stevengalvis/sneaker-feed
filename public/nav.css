@@ -33,23 +33,15 @@ nav li {
 /************************
 REGISTER AND SIGN IN
 *************************/
-/* TODO: change style for a elements */
-/* TODO: add h1 to the h1 in the forms  */
-/* TODO: change input for forms add a class */
-/* TODO: add class to form buttons */
 
-.register-hero,
-.login-hero {
-  font-family: "Sofia", cursive;
-}
-a {
+.tab a {
   text-decoration: none;
   color: #1ab188;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
-a:hover {
+.tab a:hover {
   color: #2f5c7f;
 }
 
@@ -112,14 +104,15 @@ a:hover {
   display: none;
 }
 
-h1 {
+.form-header {
   text-align: center;
   color: #ffffff;
   font-weight: 300;
   margin: 0 0 40px;
+  font-family: "Sofia", cursive;
 }
 
-label {
+.form label {
   position: absolute;
   -webkit-transform: translateY(6px);
   -moz-transform: translateY(6px);
@@ -135,7 +128,7 @@ label {
   font-size: 22px;
 }
 
-label.active {
+.form label.active {
   -webkit-transform: translateY(50px);
   -moz-transform: translateY(50px);
   transform: translateY(50px);
@@ -143,12 +136,11 @@ label.active {
   font-size: 14px;
 }
 
-label.highlight {
+.form label.highlight {
   color: #ffffff;
 }
 
-input,
-textarea {
+.form input {
   font-size: 22px;
   display: block;
   width: 100%;
@@ -164,15 +156,9 @@ textarea {
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-input:focus,
-textarea:focus {
+.form input:focus {
   outline: 0;
   border-color: #2f5c7f;
-}
-
-textarea {
-  border: 2px solid #a0b3b0;
-  resize: vertical;
 }
 
 .field-wrap {
@@ -214,8 +200,9 @@ textarea {
   cursor: pointer;
 }
 
-.button:hover, .button: focus {
-  background: #1ab188;
+.form-button:hover,
+.form-button:focus {
+  background: #2f5c7f;
   cursor: pointer;
 }
 
