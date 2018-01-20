@@ -3,7 +3,21 @@ $(function() {
 
   $(".login-register-btn").on("click", function(e) {
     console.log("clicked");
-    $(".form").toggle();
+    if (!localStorage.getItem("loggedIn")) {
+      $(".form").toggle();
+    } else {
+      swal({
+        title: "Log out?",
+        buttons: true
+      }).then(willLogOut => {
+        if (willLogOut) {
+          logoutUser();
+          swal("Logged out!", {
+            icon: "success"
+          });
+        }
+      });
+    }
   });
   //adding highlight and activate animation to labels
   $(".form")
@@ -34,6 +48,9 @@ $(function() {
       contentType: "application/json",
       success: function(data, status) {
         console.log(data, status);
+        localStorage.setItem("loggedIn", "true");
+        $(".form").toggle();
+        window.location.href = "http://localhost:8080/browse.html";
       }
     });
   });
@@ -84,7 +101,7 @@ $(function() {
       url: "http://localhost:8080/users/logout",
       type: "GET",
       success: function() {
-        console.log("logged out");
+        localStorage.removeItem("loggedIn");
       }
     });
   }
