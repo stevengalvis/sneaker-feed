@@ -5,7 +5,7 @@
 .nav-wrapper {
   z-index: 100;
   position: relative;
-  margin-bottom: 60px;
+  height: 15px;
 }
 
 nav button {
@@ -25,15 +25,15 @@ nav li {
   display: inline-block;
 }
 
-.nav-list-btns {
+.right-nav-btns {
   position: absolute;
   right: 0%;
 }
 
 .home-btn {
   position: absolute;
-  left: 0%;
-  top: 180%;
+  left: 0;
+  top: 15px;
 }
 
 /************************
