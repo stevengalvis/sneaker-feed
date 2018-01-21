@@ -8,6 +8,9 @@
   height: 60px;
 }
 
+.nav-wrapper button:hover {
+  cursor: pointer;
+}
 nav button {
   background: none;
   border: none;
