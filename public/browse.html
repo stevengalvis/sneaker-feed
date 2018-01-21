@@ -17,30 +17,92 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="float-grid.css">
   <link rel="stylesheet" href="browse.css">
+  <link rel="stylesheet" href="nav.css">
 
 </head>
 
 <body>
-
   <div class="nav-wrapper">
-    <ul>
-      <li class="favorites-button"><a href="http://localhost:8080/favorites.html" >See Favorites</a></li>
+    <nav>
+        <button class="home-btn" type="button" name="button"><a href="http://localhost:8080/index.html"></a><img class="nav-icon" src ="images/004-home.png" /></button>
+      <ul class="right-nav-btns">
+        <li>
+          <button class="login-register-btn" type="button" name="button"><a href="#"></a><img class="nav-icon" src ="images/001-profile.png" /></button>
+        </li>
+        <li>
+          <button class="favorites-btn" type="button" name="button"><a href="http://localhost:8080/favorites.html" ></a><img class="nav-icon" src ="images/002-heart.png" /></button>
+        </li>
+        <li>
+          <button class="search-btn" type="button" name="button"><a href="http://localhost:8080/browse.html"></a><img class="nav-icon" src ="images/003-interface.png" /></button>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
-      <li class="log-out">
-          <button type="submit" class="log-out-button">Log out</button></li>
+  <!--Form -->
+  <div class="row">
+    <div class="col-12">
+      <div class="form">
+        <ul class="tab-group">
+          <li class="tab active"><a href="#signup">Sign Up</a></li>
+          <li class="tab"><a href="#login">Log In</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="signup">
+            <h1 class="form-header">Register</h1>
+            <form action="http://localhost:8080/users" class="sign-up-user" method="post">
+              <div class="top-row">
+                <div class="field-wrap">
+                  <label for="first-name">First name</label><input type="text" required autocomplete="on" id="first-name" name="firstName" />
+                </div>
+                <div class="field-wrap">
+                  <label for="last-name">Last name</label><input type="text" required autocomplete="on" id="last-name" name="lastName" />
+                </div>
+              </div>
+              <div class="field-wrap">
+                <label for="user-name">Username</label><input type="text" id="user-name" name="username" required autocomplete="on" />
+              </div>
+              <div class="field-wrap">
+                <label for="password">Set a Password</label><input type="password" required autocomplete="on" id="password" name="password" />
+              </div>
+              <button type="submit" class="form-button button-block">Create Account</button>
+            </form>
+          </div>
 
-    </ul>
-
-
+          <div id="login">
+            <h1 class="form-header">Welcome Back!</h1>
+            <form action="http://localhost:8080/login" class="login-user" method="post">
+              <div class="field-wrap">
+                <label for="user-name">Username</label><input type="text" id="login-username" required autocomplete="on" name="username" />
+              </div>
+              <div class="field-wrap">
+                <label for="password">Password</label><input type="password" id="login-password" name="password" required autocomplete="on" />
+              </div>
+              <button type="submit" class="form-button button-block">Log in</button>
+            </form>
+          </div>
+        </div>
+        <!--tab-content -->
+      </div>
+    <!-- end form -->
+    </div>
   </div>
 
   <main role="main">
     <!--search box -->
-    <form action="" class="search">
-      <input type="search" class="search-term" placeholder="Enter a sneaker" name="search-query" id="search-query">
-      <button type="submit" class="search-button" name="search-button"></button>
+    <div class="row">
+      <div class="col-12">
+        <div class ="search-wrapper">
+          <form action="" class="search">
+            <input type="search" class="search-term" placeholder="Enter a sneaker" name="search-query" id="search-query">
+            <button type="submit" class="search-button" name="search-button"></button>
+          </form>
+        </div>
 
-    </form>
+      </div>
+
+    </div>
+
 
 
 
@@ -59,6 +121,8 @@
 
   <!-- link to your app.js -->
   <script src="browse.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- link to font-awesome -->
   <script src="https://use.fontawesome.com/fb7adda49e.js"></script>
 </body>

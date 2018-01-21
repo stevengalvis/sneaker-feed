@@ -48,8 +48,8 @@ $(function() {
       contentType: "application/json",
       success: function(data, status) {
         console.log(data, status);
-        localStorage.setItem("loggedIn", "true");
         $(".form").toggle();
+        localStorage.setItem("loggedIn", "true");
         window.location.href = "http://localhost:8080/browse.html";
       }
     });
