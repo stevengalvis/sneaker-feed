@@ -78,58 +78,6 @@ Feed items and images
   color: #ff5a5f;
 }
 
-/************************
-search field and button
-*************************/
-@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-
-.search-wrapper {
-  width: 100%;
-  text-align: center;
-}
-
-.search {
-  width: 100%;
-  position: relative;
-  margin-top: 100px;
-  margin-bottom: 40px;
-}
-.search:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  font-family: "FontAwesome";
-  content: "\f002";
-  background: #707070;
-  text-align: center;
-  color: #fff;
-  border-radius: 5px;
-  -webkit-font-smoothing: subpixel-antialiased;
-  font-smooth: always;
-}
-
-.search-term {
-  width: 100%;
-  border: 2px solid #707070;
-  padding: 5px;
-  height: 40px;
-  border-radius: 5px;
-  outline: none;
-}
-
-.search-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  opacity: 0;
-  cursor: pointer;
-}
-
 /* Non-mobile, grid */
 @media only screen and (min-width: 640px) {
   .branded-name {

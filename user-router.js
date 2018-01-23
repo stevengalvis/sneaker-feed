@@ -52,8 +52,6 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-// TODO: how to remove pop up to log in default check passport docs
-
 router.post("/", (req, res) => {
   if (!req.body) {
     return res.status(400).json({ message: "No request body" });
@@ -117,6 +115,7 @@ router.post("/", (req, res) => {
 });
 
 const isAuthenticated = (req, res, next) => {
+  console.log(req.user);
   if (req.user) {
     next();
   } else {
@@ -130,7 +129,7 @@ router.get("/", (req, res) => {
     .catch(err => console.log(err) && res.status(500).json({ message: "Internal server error" }));
 });
 
-router.get("/login", passport.authenticate("basic", { session: true }), (req, res) =>
+router.post("/login", passport.authenticate("basic", { session: true }), (req, res) =>
   res.json({ user: req.user.apiRepr() })
 );
 
@@ -142,8 +141,6 @@ router.get("/logout", (req, res) => {
 });
 
 router.put("/favorites", isAuthenticated, (req, res) => {
-  console.log(req.user.username);
-  console.log(req.body);
   let user;
   User.findOneAndUpdate({ username: req.user.username }, { $push: { favorites: req.body } }, { new: true })
     .exec()

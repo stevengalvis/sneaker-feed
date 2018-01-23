@@ -77,11 +77,12 @@ $(function() {
 
   $(".login-user").on("submit", function(e) {
     e.preventDefault();
-    const username = $("input[name=username]").val();
-    const password = $("input[name=password]").val();
+    const username = $("#login-username").val();
+    const password = $("#login-password").val();
+    console.log(username, password);
 
     $.ajax({
-      type: "GET",
+      type: "POST",
       url: "http://localhost:8080/users/login",
       headers: {
         "content-type": "application/json",

@@ -102,9 +102,9 @@ function renderFeedItems(searchQuery) {
 //dom manipulation
 
 $(function() {
-  // event listener for favorites
-  //get data from resultElement
-  $(".sneaker-card").on("click", ".favorite-button", function(e) {
+  //event listener for favorites
+  //  get data from resultElement
+  $(".js-sneaker-results").on("click", ".favorite-button", function(e) {
     console.log("clicked");
     let shoeData = {
       brandedName: $(this)
@@ -131,6 +131,28 @@ $(function() {
     console.log(shoeData);
     addToFavorites(shoeData);
   });
+  // event listener for favorites
+  //get data from resultElement
+  // $(".sneaker-card").on("click", ".favorite-button", function(e) {
+  //   console.log("clicked");
+  //   let shoeData = {
+  //     brandedName: $(this)
+  //       .siblings(".branded-name")
+  //       .text(),
+  //     priceLabel: $(this)
+  //       .siblings(".price-label")
+  //       .text(),
+  //     shoeUrl: $(this)
+  //       .siblings("a")
+  //       .attr("href"),
+  //     img: $(this)
+  //       .siblings("a")
+  //       .children("img")
+  //       .attr("src")
+  //   };
+  //   console.log(shoeData);
+  //   addToFavorites(shoeData);
+  // });
 
   //function for sending favorite object to db
   function addToFavorites(shoeData) {
