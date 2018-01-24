@@ -163,16 +163,13 @@ router.get("/favorites", isAuthenticated, (req, res) => {
     .catch(err => res.status(500).json({ message: "could not get favorites list" }));
 });
 
-// TODO: delete endpoint for favorites to remove item from list
-
 router.post("/favorites", isAuthenticated, (req, res) => {
   let user;
-  User.findOneAndUpdate({ username: req.user.username }, { $pull: { favorites: req.body } }, { new: true })
+  User.findOneAndUpdate({ username: req.user.username }, { $pull: { favorites: { id: req.body.id } } }, { new: true })
     .exec()
     .then(_user => {
       user = _user;
       console.log(user.apiFavorites);
-      console.warn("I did run");
       res.status(201).json(user.apiFavorites());
     })
     .catch(err => res.status(500).json({ message: "could not delete item" }));

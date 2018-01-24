@@ -20,18 +20,12 @@ function renderList(shoeData) {
   let resultElement = '<div class="row">';
   let i = 1;
   shoeData.favorites.forEach(function(item) {
-    // resultElement += '<div class ="sneaker-card">'+ '<a href= "' + item.shoeUrl + '">' + '<img src = "' + item.img + '"</img></a>' +
-    // '<p class ="price-label">' + item.priceLabel + '</p>' +
-    // '<p class ="branded-name">' + item.brandedName + '</p>' +
-    // '<button type = "button" class ="remove-item" title ="Remove item">' +
-    // '<i class="fa fa-trash-o" aria-hidden="true"></i></button></div>';
-    // let alternateImages = '';
-    //  if(item.alternateImages.size !==0) {
-    //    alternateImages = renderAlternateImages(item.alternateImages);
-    //  }
     resultElement +=
       '<div class="col-4"><div class="sneaker-card">' +
-      '<p class="branded-name">' +
+      '<p data-id ="' +
+      item.id +
+      '"' +
+      'class="branded-name">' +
       item.brandedName +
       "</p>" +
       '<div class="card-main-image">' +
@@ -60,43 +54,26 @@ function renderList(shoeData) {
   $(".js-favorites-list").html(resultElement);
 }
 
-function removeFavorite(shoeData) {
+function removeFavorite(shoeId) {
   $.ajax({
     url: "http://localhost:8080/users/favorites",
     type: "POST",
-    data: JSON.stringify(shoeData),
+    data: JSON.stringify(shoeId),
     contentType: "application/json",
     success: function(data, status) {
       renderList(data);
-      console.log(data);
     }
   });
 }
 
 $(function() {
   $(".js-favorites-list").on("click", ".remove-item", function(e) {
-    let shoeData = {
-      brandedName: $(this)
-        .parent()
-        .siblings(".branded-name")
-        .text(),
-      priceLabel: $(this)
-        .parent()
-        .siblings(".price-label")
-        .text(),
-      shoeUrl: $(this)
-        .parent()
-        .siblings(".card-main-image")
-        .find("a")
-        .attr("href"),
-      img: $(this)
-        .parent()
-        .siblings(".card-main-image")
-        .find("a")
-        .children("img")
-        .attr("src")
+    let shoeId = {
+      id: $(this)
+        .closest(".sneaker-card")
+        .find("p")
+        .data("id")
     };
-    console.log(shoeData);
-    removeFavorite(shoeData);
+    removeFavorite(shoeId);
   });
 });

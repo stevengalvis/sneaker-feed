@@ -19,38 +19,6 @@ function renderAlternateImages(alternateImages) {
   return productImages;
 }
 
-// TODO: render products function
-// function renderFeedItems(searchQuery) {
-//   $.ajax({
-//     url: 'http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=' + searchQuery   + '&offset=0&limit=15',
-//     type: "GET",
-//     success: function(data, status) {
-//         console.log(data);
-//         let resultElement = '';
-//         if (data) {
-//           data.products.forEach(function(item) {
-//             let alternateImages = '';
-//
-//             if(item.alternateImages.size !== 0) {
-//               alternateImages = renderAlternateImages(item.alternateImages);
-//             }
-//             resultElement += '<div class="row"><div class ="col-12"><div class="sneaker-card">' +
-//             '<p class ="branded-name">' + item.brandedName + '</p>' +
-//              '<div class ="card-main-image">' +
-//              '<a href= "' + item.clickUrl + '">' + '<img src = "' + item.image.sizes.Best.url + '"</img></a></div>' + '<div class ="card-content">' + '<div class = "js-alternate-images">' + alternateImages + '</div>' +
-//             '<p class ="price-label">' + item.priceLabel + '</p></div>' +
-//             '<div class ="add-to-favorites">' +
-//             '<button type ="button" class ="favorite-button" title="Add to favorites">' +
-//             '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div></div>';
-//           });
-//         }
-//         else {
-//           resultElement += '<p>No results</p>';
-//         }
-//         $('.js-sneaker-results').html(resultElement);
-//     }
-//   });
-// }
 function renderFeedItems(searchQuery) {
   $.ajax({
     url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=" + searchQuery + "&offset=0&limit=10",
@@ -108,7 +76,6 @@ $(function() {
   //event listener for favorites
   //  get data from resultElement
   $(".js-sneaker-results").on("click", ".favorite-button", function(e) {
-    console.log("clicked");
     let shoeData = {
       id: $(this)
         .closest(".sneaker-card")
@@ -138,30 +105,7 @@ $(function() {
     console.log(shoeData);
     addToFavorites(shoeData);
   });
-  // event listener for favorites
-  //get data from resultElement
-  // $(".sneaker-card").on("click", ".favorite-button", function(e) {
-  //   console.log("clicked");
-  //   let shoeData = {
-  //     brandedName: $(this)
-  //       .siblings(".branded-name")
-  //       .text(),
-  //     priceLabel: $(this)
-  //       .siblings(".price-label")
-  //       .text(),
-  //     shoeUrl: $(this)
-  //       .siblings("a")
-  //       .attr("href"),
-  //     img: $(this)
-  //       .siblings("a")
-  //       .children("img")
-  //       .attr("src")
-  //   };
-  //   console.log(shoeData);
-  //   addToFavorites(shoeData);
-  // });
 
-  //function for sending favorite object to db
   function addToFavorites(shoeData) {
     $.ajax({
       url: "http://localhost:8080/users/favorites",
