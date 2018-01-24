@@ -1,4 +1,4 @@
-renderFeedItems(" mens pumas");
+renderFeedItems("jordans");
 
 //get search query
 $(".search").on("submit", function(e) {
@@ -66,7 +66,10 @@ function renderFeedItems(searchQuery) {
         }
         resultElement +=
           '<div class="col-4"><div class="sneaker-card">' +
-          '<p class="branded-name">' +
+          '<p data-id= "' +
+          item.id +
+          '"' +
+          'class="branded-name">' +
           item.brandedName +
           "</p>" +
           '<div class="card-main-image">' +
@@ -107,6 +110,10 @@ $(function() {
   $(".js-sneaker-results").on("click", ".favorite-button", function(e) {
     console.log("clicked");
     let shoeData = {
+      id: $(this)
+        .closest(".sneaker-card")
+        .find("p")
+        .data("id"),
       brandedName: $(this)
         .closest(".sneaker-card")
         .find(".branded-name")

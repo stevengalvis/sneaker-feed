@@ -30,13 +30,13 @@ function renderList(shoeData) {
     //    alternateImages = renderAlternateImages(item.alternateImages);
     //  }
     resultElement +=
-      '<div class="col-12"><div class="sneaker-card">' +
+      '<div class="col-4"><div class="sneaker-card">' +
       '<p class="branded-name">' +
       item.brandedName +
       "</p>" +
       '<div class="card-main-image">' +
       '<a href= "' +
-      item.clickUrl +
+      item.shoeUrl +
       '">' +
       '<img src = "' +
       item.img +
@@ -48,12 +48,12 @@ function renderList(shoeData) {
       '<div class ="wrapper-bottom-card">' +
       '<button type = "button" class ="remove-item" title ="Remove item">' +
       '<i class="fa fa-trash-o" aria-hidden="true"></i></button></div></div></div>';
-    if (i % 2 === 0) {
+    if (i % 3 === 0) {
       resultElement += '</div><div class ="row">';
     }
     i++;
   });
-  if (i % 2 === 0) {
+  if (i % 3 === 0) {
     resultElement += "</div>";
   }
 
@@ -86,11 +86,13 @@ $(function() {
         .text(),
       shoeUrl: $(this)
         .parent()
-        .siblings("a")
+        .siblings(".card-main-image")
+        .find("a")
         .attr("href"),
       img: $(this)
         .parent()
-        .siblings("a")
+        .siblings(".card-main-image")
+        .find("a")
         .children("img")
         .attr("src")
     };

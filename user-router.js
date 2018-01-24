@@ -171,6 +171,8 @@ router.post("/favorites", isAuthenticated, (req, res) => {
     .exec()
     .then(_user => {
       user = _user;
+      console.log(user.apiFavorites);
+      console.warn("I did run");
       res.status(201).json(user.apiFavorites());
     })
     .catch(err => res.status(500).json({ message: "could not delete item" }));
