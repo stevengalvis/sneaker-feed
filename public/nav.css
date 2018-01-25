@@ -220,6 +220,20 @@ REGISTER AND SIGN IN
   width: 100%;
 }
 
+#login span,
+p {
+  color: #ffffff;
+}
+
+.demo-user {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#login span {
+  display: block;
+}
+
 /************************
 About Informaiton
 *************************/

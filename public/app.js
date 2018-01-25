@@ -18,12 +18,18 @@ $(function() {
       });
     }
   });
+
+  // $("html").click(function(e) {
+  //   if ($(".form").css("display") == "block") {
+  //     $(".form").toggle();
+  //   }
+  // });
+
   //adding highlight and activate animation to labels
   $(".form")
     .find("input, textarea")
     .on("keyup blur focus", function(e) {
       var $label = $('label[for="' + $(this).attr("id") + '"]');
-      console.log($label);
       if ($(this).val() == "") {
         $label.show();
       } else {
@@ -32,7 +38,6 @@ $(function() {
     });
   $(".sign-up-user").on("submit", function(e) {
     e.preventDefault();
-    console.log("clicked");
 
     let data = {
       username: $("input[name=username]").val(),
