@@ -34,12 +34,6 @@ function renderFeedItems(searchQuery) {
         }
         resultElement +=
           '<div class="col-4"><div class="sneaker-card">' +
-          '<p data-id= "' +
-          item.id +
-          '"' +
-          'class="branded-name">' +
-          item.brandedName +
-          "</p>" +
           '<div class="card-main-image">' +
           '<a href= "' +
           item.clickUrl +
@@ -47,13 +41,12 @@ function renderFeedItems(searchQuery) {
           '<img src = "' +
           item.image.sizes.Best.url +
           '"</img></a></div>' +
-          '<div class ="card-content">' +
-          '<div class = "js-alternate-images">' +
-          alternateImages +
-          "</div>" +
-          '<p class ="price-label">' +
-          item.priceLabel +
-          "</p></div>" +
+          '<p data-id= "' +
+          item.id +
+          '"' +
+          'class="branded-name">' +
+          item.brandedName +
+          "</p>" +
           '<div class ="wrapper-bottom-card">' +
           '<button type ="button" class ="favorite-button" title="Add to favorites">' +
           '<i class="fa fa-heart-o" aria-hidden="true"></i></button></div></div></div>';
