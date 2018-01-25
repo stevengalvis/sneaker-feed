@@ -44,17 +44,11 @@ Feed items and images
   padding: 5px;
   font-size: 16px;
   letter-spacing: 1px;
-  height: 36px;
+  height: 100%;
   font-weight: 500;
   color: black;
   text-align: center;
-}
-
-.price-label {
-  position: relative;
-  top: 7px;
-  left: 10px;
-  font-weight: 600;
+  width: 100%;
 }
 
 .wrapper-bottom-card {
