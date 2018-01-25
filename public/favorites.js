@@ -16,7 +16,6 @@ $.ajax({
 
 function renderList(shoeData) {
   console.log(shoeData);
-  // let resultElement = '';
   let resultElement = '<div class="row">';
   let i = 1;
   shoeData.favorites.forEach(function(item) {

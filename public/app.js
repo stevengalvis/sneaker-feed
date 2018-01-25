@@ -2,7 +2,6 @@ $(function() {
   //log in and register buttons
 
   $(".login-register-btn").on("click", function(e) {
-    console.log("clicked");
     if (!localStorage.getItem("loggedIn")) {
       $(".form").toggle();
     } else {
@@ -24,6 +23,7 @@ $(function() {
     .find("input, textarea")
     .on("keyup blur focus", function(e) {
       var $label = $('label[for="' + $(this).attr("id") + '"]');
+      console.log($label);
       if ($(this).val() == "") {
         $label.show();
       } else {
@@ -47,7 +47,6 @@ $(function() {
       data: JSON.stringify(data),
       contentType: "application/json",
       success: function(data, status) {
-        console.log(data, status);
         $(".form").toggle();
         localStorage.setItem("loggedIn", "true");
         window.location.href = "http://localhost:8080/browse.html";
@@ -79,7 +78,6 @@ $(function() {
     e.preventDefault();
     const username = $("#login-username").val();
     const password = $("#login-password").val();
-    console.log(username, password);
 
     $.ajax({
       type: "POST",
@@ -90,7 +88,9 @@ $(function() {
       },
       contentType: "application/json",
       success: function(data, status) {
-        console.log(data, status);
+        localStorage.setItem("loggedIn", "true");
+        $(".form").toggle();
+        window.location.href = "http://localhost:8080/browse.html";
       }
     });
     $("input[name=username]").val("");

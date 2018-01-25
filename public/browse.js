@@ -70,6 +70,13 @@ function renderFeedItems(searchQuery) {
   });
 }
 
+function favoritesNotification() {
+  swal({
+    title: "Added to Favorites",
+    buttons: true
+  });
+}
+
 //dom manipulation
 
 $(function() {
@@ -114,6 +121,7 @@ $(function() {
       contentType: "application/json",
       success: function(data, status) {
         console.log(data, status);
+        favoritesNotification();
       }
     });
   }
