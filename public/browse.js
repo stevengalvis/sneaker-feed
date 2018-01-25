@@ -7,18 +7,6 @@ $(".search").on("submit", function(e) {
   renderFeedItems(searchQuery);
 });
 
-//render alternateImages
-function renderAlternateImages(alternateImages) {
-  let productImages = "";
-  for (let i = 0; i < alternateImages.length; i++) {
-    if (i <= 2) {
-      productImages += '<img src = "' + alternateImages[i].sizes.Medium.url + '"</img>';
-    }
-  }
-
-  return productImages;
-}
-
 function renderFeedItems(searchQuery) {
   $.ajax({
     url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=" + searchQuery + "&offset=0&limit=10",
@@ -28,10 +16,6 @@ function renderFeedItems(searchQuery) {
       let resultElement = '<div class="row">';
       let i = 1;
       data.products.forEach(function(item) {
-        let alternateImages = "";
-        if (item.alternateImages.size !== 0) {
-          alternateImages = renderAlternateImages(item.alternateImages);
-        }
         resultElement +=
           '<div class="col-4"><div class="sneaker-card">' +
           '<div class="card-main-image">' +
