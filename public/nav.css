@@ -228,6 +228,11 @@ p {
 .demo-user {
   text-align: center;
   margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.demo-username {
+  margin-bottom: 5px;
 }
 
 #login span {
