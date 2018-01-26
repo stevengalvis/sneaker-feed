@@ -35,14 +35,10 @@ Feed items and images
   width: 100%;
 }
 
-.js-alternate-images {
-  display: none;
-}
-
 .branded-name {
   font-family: "Roboto";
   padding: 5px;
-  font-size: 16px;
+  font-size: 1.5em;
   letter-spacing: 1px;
   height: 100%;
   font-weight: 500;
@@ -63,24 +59,40 @@ Feed items and images
   width: auto;
   background-color: transparent;
   cursor: pointer;
+  font-size: 3em;
 }
 
 .favorite-button:hover {
   color: #ff5a5f;
 }
 
+.remove-item {
+  color: #969696;
+  border: none;
+  width: auto;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 3em;
+}
+
+.remove-item:hover {
+  color: red;
+}
+
 /* Non-mobile, grid */
 @media only screen and (min-width: 640px) {
   .branded-name {
-    padding: 10px;
+    font-size: 1em;
   }
 
-  .sneake-card {
-    /* width: 150px; */
+  .remove-item,
+  .favorite-button {
+    font-size: 2em;
   }
+}
 
-  .js-alternate-images {
-    /* display: inline-block; */
-    /*margin-top: 10px;*/
+@media only screen and (min-width: 900px) {
+  .branded-name {
+    font-size: 1.5em;
   }
 }

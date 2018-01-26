@@ -21,12 +21,6 @@ function renderList(shoeData) {
   shoeData.favorites.forEach(function(item) {
     resultElement +=
       '<div class="col-4"><div class="sneaker-card">' +
-      '<p data-id ="' +
-      item.id +
-      '"' +
-      'class="branded-name">' +
-      item.brandedName +
-      "</p>" +
       '<div class="card-main-image">' +
       '<a href= "' +
       item.shoeUrl +
@@ -34,10 +28,12 @@ function renderList(shoeData) {
       '<img src = "' +
       item.img +
       '"</img></a></div>' +
-      '<div class ="card-content">' +
-      '<p class ="price-label">' +
-      item.priceLabel +
-      "</p></div>" +
+      '<p data-id ="' +
+      item.id +
+      '"' +
+      'class="branded-name">' +
+      item.brandedName +
+      "</p>" +
       '<div class ="wrapper-bottom-card">' +
       '<button type = "button" class ="remove-item" title ="Remove item">' +
       '<i class="fa fa-trash-o" aria-hidden="true"></i></button></div></div></div>';
