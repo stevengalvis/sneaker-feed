@@ -1,4 +1,4 @@
-renderFeedItems("jordan 2s");
+renderFeedItems("jordan shoes");
 
 //get search query
 $(".search").on("submit", function(e) {
