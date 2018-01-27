@@ -30,9 +30,9 @@ app.use("*", function(req, res) {
 
 let server;
 
-function runServer(databaseurl, port = PORT) {
+function runServer(databaseUrl = DATABASE_URL, port = PORT) {
   return new Promise((resolve, reject) => {
-    mongoose.connect(databaseurl, { useMongoClient: true }, err => {
+    mongoose.connect(databaseUrl, { useMongoClient: true }, err => {
       if (err) {
         return reject(err);
       }
