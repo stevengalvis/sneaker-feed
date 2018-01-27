@@ -30,9 +30,9 @@ app.use("*", function(req, res) {
 
 let server;
 
-function runServer() {
+function runServer(databaseurl, port = PORT) {
   return new Promise((resolve, reject) => {
-    mongoose.connect(DATABASE_URL, { useMongoClient: true }, err => {
+    mongoose.connect(databaseurl, { useMongoClient: true }, err => {
       if (err) {
         return reject(err);
       }
@@ -64,7 +64,7 @@ function closeServer() {
 }
 
 if (require.main === module) {
-  runServer().catch(err => console.error(err));
+  runServer(DATABASE_URL).catch(err => console.error(err));
 }
 
 module.exports = { app, runServer, closeServer };
