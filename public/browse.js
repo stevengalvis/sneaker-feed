@@ -1,4 +1,4 @@
-renderFeedItems("jordans");
+renderFeedItems("jordan 2s");
 
 //get search query
 $(".search").on("submit", function(e) {
@@ -47,11 +47,43 @@ function renderFeedItems(searchQuery) {
   });
 }
 
-function favoritesNotification() {
-  swal({
-    title: "Added to Favorites",
-    buttons: true
+function itemInFavorites(shoeData) {
+  $.ajax({
+    url: "http://localhost:8080/users/favorites/" + shoeData.id,
+    type: "GET",
+    contentType: "application/json",
+    success: function(status) {
+      console.log(status);
+      if (status.itemInFavorites == "false") {
+        addToFavorites(shoeData);
+      } else {
+        console.log("Item already in favorites");
+        swal("Item already in favorites");
+      }
+    },
+    error: function(xhr, status, error) {
+      console.log(xhr.responseText);
+      console.log("error");
+      console.log(error);
+    }
   });
+}
+
+function addToFavorites(shoeData) {
+  $.ajax({
+    url: "http://localhost:8080/users/favorites",
+    type: "PUT",
+    data: JSON.stringify(shoeData),
+    contentType: "application/json",
+    success: function(data, status) {
+      console.log(data, status);
+      favoritesNotification();
+    }
+  });
+}
+
+function favoritesNotification() {
+  swal("Added to Favorites.");
 }
 
 //dom manipulation
@@ -69,11 +101,6 @@ $(function() {
         .closest(".sneaker-card")
         .find(".branded-name")
         .text(),
-      priceLabel: $(this)
-        .parent()
-        .siblings(".card-content")
-        .find(".price-label")
-        .text(),
       shoeUrl: $(this)
         .parent()
         .siblings(".card-main-image")
@@ -87,19 +114,6 @@ $(function() {
         .attr("src")
     };
     console.log(shoeData);
-    addToFavorites(shoeData);
+    itemInFavorites(shoeData);
   });
-
-  function addToFavorites(shoeData) {
-    $.ajax({
-      url: "http://localhost:8080/users/favorites",
-      type: "PUT",
-      data: JSON.stringify(shoeData),
-      contentType: "application/json",
-      success: function(data, status) {
-        console.log(data, status);
-        favoritesNotification();
-      }
-    });
-  }
 });

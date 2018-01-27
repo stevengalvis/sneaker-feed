@@ -115,7 +115,6 @@ router.post("/", (req, res) => {
 });
 
 const isAuthenticated = (req, res, next) => {
-  console.log(req.user);
   if (req.user) {
     next();
   } else {
@@ -146,7 +145,6 @@ router.put("/favorites", isAuthenticated, (req, res) => {
     .exec()
     .then(_user => {
       user = _user;
-      console.log(req.body);
       res.status(201).json(user.apiRepr());
     })
     .catch(err => res.status(500).json({ message: "Something went wrong" }));
@@ -163,13 +161,29 @@ router.get("/favorites", isAuthenticated, (req, res) => {
     .catch(err => res.status(500).json({ message: "could not get favorites list" }));
 });
 
+router.get("/favorites/:id", isAuthenticated, (req, res) => {
+  let user;
+  User.findOne({
+    username: req.user.username
+  })
+    .exec()
+    .then(_user => {
+      user = _user;
+      console.log(user.isIteminFavorites(req.params.id));
+      if (user.isIteminFavorites(req.params.id)) {
+        res.status(201).json({ itemInFavorites: "true" });
+      }
+      res.status(201).json({ itemInFavorites: "false" });
+    })
+    .catch(err => res.status(500).json({ message: "internal server error" }));
+});
+
 router.post("/favorites", isAuthenticated, (req, res) => {
   let user;
   User.findOneAndUpdate({ username: req.user.username }, { $pull: { favorites: { id: req.body.id } } }, { new: true })
     .exec()
     .then(_user => {
       user = _user;
-      console.log(user.apiFavorites);
       res.status(201).json(user.apiFavorites());
     })
     .catch(err => res.status(500).json({ message: "could not delete item" }));
