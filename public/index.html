@@ -3,67 +3,177 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Node Capstone</title>
-  <!-- Responsive viewport tag, tells small screens that it's responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <title>Find your shoe</title>
   <!-- Normalize.css, a cross-browser reset file -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="float-grid.css">
+  <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="nav.css">
+    <!-- <link rel="stylesheet" type="text/css" href="plugins/sweetalert-master/dist/sweetalert.css"> -->
 </head>
 
 <body>
-  <main role="main">
+        <div class="nav-wrapper">
+          <nav>
+            <a href="http://localhost:8080/index.html">
+              <button class="home-btn" type="button" name="button"><img class="nav-icon" src ="images/004-home.png" /></button>
+            </a>
+            <ul class="right-nav-btns">
+              <li>
+                <a href="#">
+                  <button class="login-register-btn" type="button" name="button"><img class="nav-icon" src ="images/001-profile.png" /></button>
+                </a>
+              </li>
+              <li>
+                <a href="http://localhost:8080/favorites.html" >
+                  <button class="favorites-btn" type="button" name="button"><img class="nav-icon" src ="images/002-heart.png" /></button>
+              </a>
+              </li>
+              <li>
+                <a href="http://localhost:8080/browse.html">
+                  <button class="search-btn" type="button" name="button"><img class="nav-icon" src ="images/003-interface.png" /></button>
+              </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+    <div class="hero-background">
+      <div class="row">
+        <div class="col-12">
+          <div class="hero-wrapper">
+            <h1 class="hero-text">Stay on top of your shoe Game</h1>
+          </div>
+        </div>
+      </div>
+      <video autoplay muted loop>
+        <source src ="videos/sneaker-vid.mp4" />
+      </video>
+    </div>
+
+
+<!--Form -->
+<div class="row">
+  <div class="col-12">
+    <div class="form">
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="signup">
+          <h1 class="form-header">Register</h1>
+          <form action="http://localhost:8080/users" class="sign-up-user" method="post">
+            <div class="top-row">
+              <div class="field-wrap">
+                <label for="first-name">First name</label><input type="text" required autocomplete="on" id="first-name" name="firstName" />
+              </div>
+              <div class="field-wrap">
+                <label for="last-name">Last name</label><input type="text" required autocomplete="on" id="last-name" name="lastName" />
+              </div>
+            </div>
+            <div class="field-wrap">
+              <label for="user-name">Username</label><input type="text" id="user-name" name="username" required autocomplete="on" />
+            </div>
+            <div class="field-wrap">
+              <label for="password">Set a Password</label><input type="password" required autocomplete="on" id="password" name="password" />
+            </div>
+            <button type="submit" class="form-button button-block">Create Account</button>
+          </form>
+        </div>
+
+        <div id="login">
+          <h1 class="form-header">Welcome Back!</h1>
+          <form action="http://localhost:8080/login" class="login-user" method="post">
+            <div class="field-wrap">
+              <label for="login-username">Username</label><input type="text" id="login-username" required autocomplete="on" name="username" />
+            </div>
+            <div class="field-wrap">
+              <label for="login-password">Password</label><input type="password" id="login-password" name="password" required autocomplete="on" />
+            </div>
+            <div class="demo-user">
+              <p>Demo Account</p>
+              <span class=
+              "demo-username">Username: abc</span>
+              <span>Password:123</span>
+            </div>
+            <button type="submit" class="form-button button-block">Log in</button>
+          </form>
+        </div>
+      </div>
+      <!--tab-content -->
+    </div>
+  <!-- end form -->
+  </div>
+</div>
+
+  <div class="about">
+    <div class="row">
+      <div class="col-6">
+        <div class="about-text">
+          <h2>Find your next shoe</h2>
+          <p>Sneaker Feed helps you find your next pair. Search by color brand or style for the right pair of shoes. Sneaker Feed uses the Shop Style API to provide a wide variety of sneakers</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="about-img">
+          <img class="responsive-image" src="images/sneaker.png" alt="Sneaker Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about">
+    <div class="row">
+      <div class="col-6">
+        <div class="about-text">
+          <h2>Like your favorite shoes and keep a list</h2>
+          <p>Keep track of shoes you want to purchase by adding to your favorites list. Never miss out on a pair you love! </p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="about-img">
+          <img class="responsive-image" src="images/bigger-like.png" alt="Like Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about">
+    <div class="row">
+      <div class="col-6">
+        <div class="about-text">
+          <h2>Buy your favorite shoes</h2>
+          <p>Easily shop your favorite shoes with a redirect to the site where you can purchase</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="about-img">
+          <img class="responsive-image" src="images/shopping-cart.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-
-    <form action="http://localhost:8080/users" class="sign-up" method="post">
-
-      <fieldset name="sign-up">
-        <legend>Sign up</legend>
-        <label for="user-name">Username</label><input id="user-name" name="username" type="text" />
-        <label for="first-name">First name</label><input id="first-name" name="firstName" type="text" />
-        <label for="last-name">Last name</label><input id="last-name" name="lastName" type="text" />
-        <label for="password">Password</label><input id="password" name="password" type="password" />
-      </fieldset>
-      <button type="submit">Submit</button>
-    </form>
-
-
-
-    <form action="http://localhost:8080/login" class="login" method="post">
-
-      <fieldset name="login">
-        <legend>Log in</legend>
-        <label for="user-name">Username</label><input id="login-username" name="username" type="text" />
-        <label for="password">Password</label><input id="login-password" name="password" type="password" />
-      </fieldset>
-      <button type="submit">Log in</button>
-    </form>
-
-    <a href="/favorites.html">See Favorites</a>
-
-    <div class="js-sneaker-results"></div>
-
-
-
-
-
-  </main>
-
+  <div class="button-wrapper">
+    <a href="http://localhost:8080/browse.html" class=" feed-btn action-button shadow animate ">Find your Sneaker</a>
+  </div>
   <!-- link to jquery -->
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
   <!-- link to your app.js -->
   <script src="app.js" charset="utf-8"></script>
   <!-- link to font-awesome -->
   <script src="https://use.fontawesome.com/fb7adda49e.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

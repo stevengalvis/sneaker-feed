@@ -1,0 +1,286 @@
+/************************
+  NAV
+*************************/
+
+.nav-wrapper {
+  z-index: 100;
+  position: relative;
+  height: 60px;
+}
+
+.nav-wrapper button:hover {
+  cursor: pointer;
+}
+nav button {
+  background: none;
+  border: none;
+}
+
+nav img {
+  max-height: 42px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+.right-nav-btns {
+  position: absolute;
+  right: 0%;
+}
+
+.home-btn {
+  position: absolute;
+  left: 0;
+  top: 15px;
+}
+
+/************************
+REGISTER AND SIGN IN
+*************************/
+
+.tab a {
+  text-decoration: none;
+  color: #1ab188;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.tab a:hover {
+  color: #2f5c7f;
+}
+
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  width: 90%;
+  height: auto;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  padding: 40px 80px;
+  border-radius: 1em;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  max-width: 600px;
+  margin: 40px auto;
+  z-index: 150;
+  display: none;
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  white-space: nowrap;
+}
+
+.tab-group li a:hover {
+  background: #89aecc;
+  color: #ffffff;
+}
+
+.tab-group .active a {
+  background: #89aecc;
+  color: #ffffff;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+.form-header {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+  font-family: "Sofia", cursive;
+}
+
+.form label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+  -moz-transform: translateY(6px);
+  transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visbility: hidden;
+  -moz-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+
+.form label.active {
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+
+.form label.highlight {
+  color: #ffffff;
+}
+
+.form input {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  -moz-transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form input:focus {
+  outline: 0;
+  border-color: #2f5c7f;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.top-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.top-row > div {
+  float: left;
+  width: 100%;
+  margin-right: 4%;
+}
+
+.top-row > div:last-child {
+  margin-bottom: 10px;
+}
+
+.form-button {
+  border: 0;
+  outline: none;
+  border-radius: 1em;
+  padding: 15px 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #89aecc;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.form-button:hover,
+.form-button:focus {
+  background: #2f5c7f;
+  cursor: pointer;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+#login span,
+p {
+  color: #ffffff;
+}
+
+.demo-user {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.demo-username {
+  margin-bottom: 5px;
+}
+
+#login span {
+  display: block;
+}
+
+/************************
+About Informaiton
+*************************/
+
+.about-text h2 {
+  font-size: 3.7em;
+  line-height: 1.2em;
+}
+
+.about-text p {
+  font-size: 1.7em;
+}
+
+.about {
+  margin-bottom: 5%;
+}
+
+/************************
+BREAKPOINTS
+*************************/
+
+@media screen and (min-width: 600px) {
+  .form-button {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  .form {
+    padding: 40px;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .top-row > div {
+    width: 48%;
+  }
+
+  .field-wrap {
+    margin-bottom: 40px;
+  }
+
+  .top-row > div:last-child {
+    margin: 0;
+  }
+}

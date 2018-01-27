@@ -11,10 +11,12 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
     "express": "^4.15.3",
     "express-session": "^1.15.4",
     "mongoose": "^4.11.1",
     "morgan": "^1.8.2",
+    "node-vibrant": "^3.0.0-alpha.2",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0"
   },

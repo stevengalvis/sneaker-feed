@@ -3,18 +3,26 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
+const cors = require("cors");
+
 const { router: userRouter } = require("./user-router");
 
 mongoose.Promise = global.Promise;
 
-const { PORT, DATABASE_URL } = require("./config");
+const { CLIENT_ORIGIN, PORT, DATABASE_URL } = require("./config");
 
 const app = express();
 
 app.use(express.static("public"));
 app.use(morgan("common"));
 
-app.use("/users/", userRouter);
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN
+  })
+);
+
+app.use("/users", userRouter);
 
 app.use("*", function(req, res) {
   return res.status(404).json({ message: "Not found" });

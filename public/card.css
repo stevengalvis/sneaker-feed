@@ -1,0 +1,98 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/************************
+Feed items and images
+*************************/
+
+.sneaker-card {
+  margin-bottom: 20px;
+  border-radius: 1em;
+  padding: 23px;
+  background: #fff;
+  position: relative;
+  -webkit-box-shadow: 0 2px 55px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 55px rgba(0, 0, 0, 0.1);
+}
+
+.card-main-image {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80%;
+  border-radius: 1em;
+}
+
+.card-main-image img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+}
+
+.branded-name {
+  font-family: "Roboto";
+  padding: 5px;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  height: 100%;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+
+.wrapper-bottom-card {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+
+.favorite-button {
+  color: #969696;
+  border: none;
+  width: auto;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 3em;
+}
+
+.favorite-button:hover {
+  color: #ff5a5f;
+}
+
+.remove-item {
+  color: #969696;
+  border: none;
+  width: auto;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 3em;
+}
+
+.remove-item:hover {
+  color: red;
+}
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 640px) {
+  .branded-name {
+    font-size: 1em;
+  }
+
+  .remove-item,
+  .favorite-button {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .branded-name {
+    font-size: 1.5em;
+  }
+}
