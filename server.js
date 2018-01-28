@@ -12,7 +12,7 @@ const { router: userRouter } = require("./user-router");
 
 const app = express();
 
-app.use(express.static(__dirname + "public"));
+app.use(express.static("public"));
 app.use(morgan("common"));
 
 app.use(
