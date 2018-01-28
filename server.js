@@ -5,10 +5,9 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 mongoose.Promise = global.Promise;
+const { router: userRouter } = require("./user-router");
 
 const { CLIENT_ORIGIN, PORT, DATABASE_URL } = require("./config");
-
-const { router: userRouter } = require("./user-router");
 
 const app = express();
 
