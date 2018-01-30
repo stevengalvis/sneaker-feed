@@ -23,12 +23,6 @@ $(function() {
     }
   });
 
-  $("html").click(function(e) {
-    $(".form").toggle();
-    isFormOpen = false;
-    console.log("hee");
-  });
-
   //adding highlight and activate animation to labels
   $(".form")
     .find("input, textarea")
