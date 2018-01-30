@@ -1,10 +1,9 @@
 $(function() {
   //log in and register buttons
 
-  let isFormOpen = "";
+  let isFormOpen = false;
 
   $(".login-register-btn").on("click", function(e) {
-    isFormOpen = false;
     if (!localStorage.getItem("loggedIn")) {
       $(".form").toggle();
       isFormOpen = true;
@@ -22,12 +21,12 @@ $(function() {
         }
       });
     }
-    if (isFormOpen) {
-      $("html").click(function(e) {
-        $(".form").toggle();
-        console.log("hee");
-      });
-    }
+  });
+
+  $("html").click(function(e) {
+    $(".form").toggle();
+    isFormOpen = false;
+    console.log("hee");
   });
 
   //adding highlight and activate animation to labels
