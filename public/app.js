@@ -1,9 +1,14 @@
 $(function() {
   //log in and register buttons
 
+  let isFormOpen = "";
+
   $(".login-register-btn").on("click", function(e) {
+    isFormOpen = false;
     if (!localStorage.getItem("loggedIn")) {
       $(".form").toggle();
+      isFormOpen = true;
+      console.log(isFormOpen + " when btn click");
     } else {
       swal({
         title: "Log out?",
@@ -17,13 +22,13 @@ $(function() {
         }
       });
     }
+    if (isFormOpen) {
+      $("html").click(function(e) {
+        $(".form").toggle();
+        console.log("hee");
+      });
+    }
   });
-
-  // $("html").click(function(e) {
-  //   if ($(".form").css("display") == "block") {
-  //     $(".form").toggle();
-  //   }
-  // });
 
   //adding highlight and activate animation to labels
   $(".form")
