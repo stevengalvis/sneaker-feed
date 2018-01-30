@@ -9,7 +9,7 @@ $(".search").on("submit", function(e) {
 
 function renderFeedItems(searchQuery) {
   $.ajax({
-    url: "http://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=" + searchQuery + "&offset=0&limit=10",
+    url: "https://api.shopstyle.com/api/v2/products?pid=uid1025-39588145-82&fts=" + searchQuery + "&offset=0&limit=10",
     type: "GET",
     success: function(data, status) {
       console.log(data);
