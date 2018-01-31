@@ -2,7 +2,7 @@
 
 //get favorites
 $.ajax({
-  url: "http://localhost:8080/users/favorites",
+  url: "/users/favorites",
   type: "GET",
   success: function(data) {
     if (data) {
@@ -51,7 +51,7 @@ function renderList(shoeData) {
 
 function removeFavorite(shoeId) {
   $.ajax({
-    url: "http://localhost:8080/users/favorites",
+    url: "/users/favorites",
     type: "POST",
     data: JSON.stringify(shoeId),
     contentType: "application/json",

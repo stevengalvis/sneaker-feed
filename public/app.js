@@ -84,7 +84,7 @@ $(function() {
 
     $.ajax({
       type: "POST",
-      url: "http://localhost:8080/users/login",
+      url: "/users/login",
       headers: {
         "content-type": "application/json",
         authorization: "Basic " + btoa(username + ":" + password)
@@ -93,7 +93,7 @@ $(function() {
       success: function(data, status) {
         localStorage.setItem("loggedIn", "true");
         $(".form").toggle();
-        window.location.href = "http://localhost:8080/browse.html";
+        window.location.href = "/browse.html";
       }
     });
     $("input[name=username]").val("");
@@ -102,7 +102,7 @@ $(function() {
 
   function logoutUser() {
     $.ajax({
-      url: "http://localhost:8080/users/logout",
+      url: "/users/logout",
       type: "GET",
       success: function() {
         localStorage.removeItem("loggedIn");

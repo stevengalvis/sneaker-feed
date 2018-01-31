@@ -49,7 +49,7 @@ function renderFeedItems(searchQuery) {
 
 function itemInFavorites(shoeData) {
   $.ajax({
-    url: "http://localhost:8080/users/favorites/" + shoeData.id,
+    url: "/users/favorites/" + shoeData.id,
     type: "GET",
     contentType: "application/json",
     success: function(status) {
@@ -70,7 +70,7 @@ function itemInFavorites(shoeData) {
 
 function addToFavorites(shoeData) {
   $.ajax({
-    url: "http://localhost:8080/users/favorites",
+    url: "/users/favorites",
     type: "PUT",
     data: JSON.stringify(shoeData),
     contentType: "application/json",
