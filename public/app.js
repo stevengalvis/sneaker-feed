@@ -52,7 +52,7 @@ $(function() {
       success: function(data, status) {
         $(".form").toggle();
         localStorage.setItem("loggedIn", "true");
-        window.location.href = "http://localhost:8080/browse.html";
+        window.location.href = "/browse.html";
       }
     });
   });
