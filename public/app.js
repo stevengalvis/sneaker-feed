@@ -44,17 +44,7 @@ $(function() {
       password: $("input[name=password]").val()
     };
 
-    $.ajax({
-      url: "/users",
-      type: "POST",
-      data: JSON.stringify(data),
-      contentType: "application/json",
-      success: function(data, status) {
-        $(".form").toggle();
-        localStorage.setItem("loggedIn", "true");
-        window.location.href = "/browse.html";
-      }
-    });
+    signUser(data);
   });
 
   //sign up and login from switching
@@ -87,6 +77,20 @@ $(function() {
     $("input[name=username]").val("");
     $("input[name=password]").val("");
   });
+
+  function signUser(data) {
+    $.ajax({
+      url: "/users",
+      type: "POST",
+      data: JSON.stringify(data),
+      contentType: "application/json",
+      success: function(data, status) {
+        $(".form").toggle();
+        logUserIn(data.username, data.password);
+        window.location.href = "/browse.html";
+      }
+    });
+  }
 
   function logUserIn(username, password) {
     $.ajax({
