@@ -43,8 +43,27 @@ video {
   width: 100%;
   height: auto;
   z-index: -100;
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+}
+
+/************************
+About Informaiton
+*************************/
+
+.about-text h2 {
+  font-size: 3.7em;
+  line-height: 1.2em;
+}
+
+.about-text p {
+  font-size: 1.7em;
+  color: black;
+}
+
+.about {
+  margin-bottom: 5%;
 }
 
 /************************
@@ -54,6 +73,7 @@ video {
 .animate {
   transition: all 0.1s;
   -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
   padding: 10px 40px;
   border-radius: 10px;
   font-family: "Roboto", sans-serif;
