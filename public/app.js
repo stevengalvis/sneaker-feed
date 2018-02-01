@@ -82,6 +82,13 @@ $(function() {
     const username = $("#login-username").val();
     const password = $("#login-password").val();
 
+    logUserIn(username, password);
+
+    $("input[name=username]").val("");
+    $("input[name=password]").val("");
+  });
+
+  function logUserIn(username, password) {
     $.ajax({
       type: "POST",
       url: "/users/login",
@@ -96,9 +103,7 @@ $(function() {
         window.location.href = "/browse.html";
       }
     });
-    $("input[name=username]").val("");
-    $("input[name=password]").val("");
-  });
+  }
 
   function logoutUser() {
     $.ajax({
