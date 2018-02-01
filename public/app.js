@@ -79,6 +79,8 @@ $(function() {
   });
 
   function signUser(data) {
+    const username = data.username;
+    const password = data.password;
     $.ajax({
       url: "/users",
       type: "POST",
@@ -86,7 +88,7 @@ $(function() {
       contentType: "application/json",
       success: function(data, status) {
         $(".form").toggle();
-        logUserIn(data.username, data.password);
+        logUserIn(username, password);
         window.location.href = "/browse.html";
       }
     });
