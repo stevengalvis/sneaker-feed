@@ -1,6 +1,8 @@
 <h1>Sneaker Feed</h1>
-<p><a href="https://rocky-castle-50046.herokuapp.com/">Sneaker Feed</a> Sneaker Feed helps you find your next pair. Search by color brand or style for the right pair of shoes. Sneaker Feed uses the Shop Style API to provide a wide variety of sneakers </p>
+<p><a href="https://rocky-castle-50046.herokuapp.com/">Sneaker Feed</a> helps you find your next pair. Search by color brand or style for the right pair of shoes. Sneaker Feed uses the Shop Style API to provide a wide variety of sneakers </p>
 <img src="/public/img/sneaker-feed-landing-page.png">
+
+<p></p>
 
 <h2>Motivation</h2>
 <p>The main focus of the app is to allow users to search for sneakers across multiple sites.</p>
