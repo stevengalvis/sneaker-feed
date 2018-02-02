@@ -125,7 +125,7 @@ router.get("/", (req, res) => {
   return User.find()
     .exec()
     .then(users => res.json(users.map(user => user.apiRepr())))
-    .catch(err => console.log(err) && res.status(500).json({ message: "Internal server error" }));
+    .catch(err => res.status(500).json({ message: "Internal server error" }));
 });
 
 router.post("/login", passport.authenticate("basic", { session: true }), (req, res) =>
@@ -134,11 +134,11 @@ router.post("/login", passport.authenticate("basic", { session: true }), (req, r
 
 router.get("/logout", (req, res) => {
   req.session.destroy(function(err) {
-    console.log("log out");
     res.redirect("/");
   });
 });
 
+// endpoint for users to add to favorites
 router.put("/favorites", isAuthenticated, (req, res) => {
   let user;
   User.findOneAndUpdate({ username: req.user.username }, { $push: { favorites: req.body } }, { new: true })
@@ -169,7 +169,6 @@ router.get("/favorites/:id", isAuthenticated, (req, res) => {
     .exec()
     .then(_user => {
       user = _user;
-      console.log(user.isIteminFavorites(req.params.id));
       if (user.isIteminFavorites(req.params.id)) {
         res.status(201).json({ itemInFavorites: "true" });
       }
@@ -178,6 +177,7 @@ router.get("/favorites/:id", isAuthenticated, (req, res) => {
     .catch(err => res.status(500).json({ message: "internal server error" }));
 });
 
+// endpoint for removing from favorites
 router.post("/favorites", isAuthenticated, (req, res) => {
   let user;
   User.findOneAndUpdate({ username: req.user.username }, { $pull: { favorites: { id: req.body.id } } }, { new: true })

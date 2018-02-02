@@ -1,4 +1,4 @@
-renderFeedItems("jordan shoes");
+renderFeedItems("jordan shoes 13s");
 
 //get search query
 $(".search").on("submit", function(e) {
@@ -53,11 +53,9 @@ function itemInFavorites(shoeData) {
     type: "GET",
     contentType: "application/json",
     success: function(status) {
-      console.log(status);
       if (status.itemInFavorites == "false") {
         addToFavorites(shoeData);
       } else {
-        console.log("Item already in favorites");
         swal("Item already in favorites");
       }
     },
@@ -75,7 +73,6 @@ function addToFavorites(shoeData) {
     data: JSON.stringify(shoeData),
     contentType: "application/json",
     success: function(data, status) {
-      console.log(data, status);
       favoritesNotification();
     }
   });
@@ -112,7 +109,6 @@ $(function() {
         .children("img")
         .attr("src")
     };
-    console.log(shoeData);
     itemInFavorites(shoeData);
   });
 });

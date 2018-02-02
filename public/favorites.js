@@ -6,7 +6,6 @@ $.ajax({
   type: "GET",
   success: function(data) {
     if (data) {
-      console.log(data);
       renderList(data);
     } else {
       resultElement += "<p>No results</p>";
@@ -15,7 +14,6 @@ $.ajax({
 });
 
 function renderList(shoeData) {
-  console.log(shoeData);
   let resultElement = '<div class="row">';
   let i = 1;
   shoeData.favorites.forEach(function(item) {

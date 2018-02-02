@@ -1,13 +1,9 @@
 $(function() {
   //log in and register buttons
 
-  let isFormOpen = false;
-
   $(".login-register-btn").on("click", function(e) {
     if (!localStorage.getItem("loggedIn")) {
       $(".form").toggle();
-      isFormOpen = true;
-      console.log(isFormOpen + " when btn click");
     } else {
       swal({
         title: "Log out?",
@@ -34,6 +30,7 @@ $(function() {
         $label.hide();
       }
     });
+
   $(".sign-up-user").on("submit", function(e) {
     e.preventDefault();
 
