@@ -83,7 +83,7 @@ REGISTER AND SIGN IN
 .tab-group {
   list-style: none;
   padding: 0;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
 }
 
 .tab-group:after {
@@ -182,6 +182,10 @@ REGISTER AND SIGN IN
 .field-wrap {
   position: relative;
   margin-bottom: 10px;
+}
+
+.field-wrap label {
+  white-space: nowrap;
 }
 
 .top-row::after {
