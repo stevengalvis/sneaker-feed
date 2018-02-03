@@ -35,7 +35,9 @@ $(function() {
     e.preventDefault();
 
     let data = {
-      username: $("input[name=username]").val(),
+      username: $("input[name=username]")
+        .val()
+        .toLowerCase(),
       firstName: $("input[name=firstName]").val(),
       lastName: $("input[name=lastName]").val(),
       password: $("input[name=password]").val()
@@ -66,7 +68,9 @@ $(function() {
 
   $(".login-user").on("submit", function(e) {
     e.preventDefault();
-    const username = $("#login-username").val();
+    const username = $("#login-username")
+      .val()
+      .toLowerCase();
     const password = $("#login-password").val();
 
     logUserIn(username, password);
