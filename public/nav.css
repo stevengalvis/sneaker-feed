@@ -68,7 +68,7 @@ REGISTER AND SIGN IN
   width: 90%;
   height: auto;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
   padding: 40px 80px;
@@ -260,6 +260,7 @@ BREAKPOINTS
   .form {
     padding: 40px;
     width: auto;
+    top: 30%;
   }
 }
 
