@@ -105,3 +105,16 @@ About Informaiton
   width: 100%;
   margin: 50px auto;
 }
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 640px) {
+  .hero-text {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .hero-text {
+    font-size: 5rem;
+  }
+}
